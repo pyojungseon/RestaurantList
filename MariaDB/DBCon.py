@@ -2,8 +2,8 @@ import pymysql
 import sys
 import configparser
 import os
-# sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
-from ..DTO.LogDTO import LogDTO
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+from DTO.LogDTO import LogDTO
 
 class DBConnection:
 

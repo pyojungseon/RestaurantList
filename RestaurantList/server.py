@@ -1,9 +1,9 @@
 from flask import Flask, json, request, jsonify
 import sys
 import os
-#sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
-from ..DTO.LogDTO import LogDTO
-from ..MariaDB.DBCon import DBConnection
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+from DTO.LogDTO import LogDTO
+from MariaDB.DBCon import DBConnection
 
 app = Flask(__name__)
 

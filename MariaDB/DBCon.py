@@ -1,6 +1,7 @@
 import pymysql
 import sys
 import configparser
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from DTO.LogDTO import LogDTO
 
 class DBConnection:
@@ -18,7 +19,7 @@ class DBConnection:
 
     def getDBConfig(self):
         properties = configparser.ConfigParser()
-        properties.read('./config/DBconfig.ini')
+        properties.read('../config/DBconfig.ini')
         if(self.env=='T'):
             props = properties["TEST"]
         else:

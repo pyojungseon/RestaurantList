@@ -1,6 +1,8 @@
 from flask import Flask, json, request, jsonify
-from DTO.LogDTO import LogDTO
 from MariaDB.DBCon import DBConnection
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+from DTO.LogDTO import LogDTO
 
 app = Flask(__name__)
 
@@ -95,6 +97,6 @@ def test():
     return jsonify(dataSend)
 
 if __name__ == '__main__':
-    dbCon = DBConnection(env)
+    dbCon = DBConnection('P')
     dbCon.dbConnection()
     app.run(host='0.0.0.0', port=10002, debug=True)

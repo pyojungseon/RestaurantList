@@ -1,4 +1,6 @@
 from flask import Flask, json, request, jsonify
+from DTO.LogDTO import LogDTO
+from MariaDB.DBCon import DBConnection
 
 app = Flask(__name__)
 
@@ -6,15 +8,19 @@ app = Flask(__name__)
 def home():
     return "Hello, Flask"
 
-@app.route('/innerteam', methods=['POST'])
-def innerteam():
+@app.route('/restaurant', methods=['POST'])
+def restaurant():
     params = request.get_json()
     userId = params['userRequest']['user']['id']
     userId = userId.replace("\n", "")
     content = params['userRequest']['utterance']
     content = content.replace("\n", "")
+    tag = "/"
     print(content)
     print(userId)
+
+    logData = LogDTO(userId, content, tag)
+    dbCon.insertLogData(self, logData)
 
     if content == "아이디":
         print("if문아이디 content in")
@@ -61,5 +67,34 @@ def innerteam():
         }
     return jsonify(dataSend)
 
+
+@app.route('/restaurantTest', methods=['POST'])
+def test():
+    params = request.get_json()
+    userId = params['userRequest']['user']['id']
+    userId = userId.replace("\n", "")
+    content = params['userRequest']['utterance']
+    content = content.replace("\n", "")
+    print(content)
+    print(userId)
+
+    if content == "아이디":
+        print("if문아이디 content in")
+        dataSend = {
+            "version": "2.0",
+            "template": {
+                "outputs": [
+                    {
+                        "simpleText": {
+                            "text": userId
+                        }
+                    }
+                ]
+            }
+        }
+    return jsonify(dataSend)
+
 if __name__ == '__main__':
+    dbCon = DBConnection(env)
+    dbCon.dbConnection()
     app.run(host='0.0.0.0', port=10002, debug=True)

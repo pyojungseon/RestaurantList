@@ -70,7 +70,7 @@ def restaurant():
                 ]
             }
         }
-    elif header == "추천":
+    elif tag == "추천":
         print("추천 content in")
         if lifeSpan==0 :
             dataSend = {
@@ -94,7 +94,7 @@ def restaurant():
                     ]
                 }
             }
-        elif lifeSpan==4 :
+        elif lifeSpan==5 :
             if content==1 :
                 content="한식"
             elif content==2:

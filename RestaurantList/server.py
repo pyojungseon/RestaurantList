@@ -19,11 +19,15 @@ def restaurant():
     userId = userId.replace("\n", "")
     content = params['userRequest']['utterance']
     content = content.replace("\n", "")
-    tag = params['outputContexts']['name']
-    lifeSpan = params['outputContexts']['lifeSpan']
     header = content.split(" ")[0]
-    if tag.length == 0:
+    try:
+        tag = params['contexts']['name']
+    except Exception as ex:
         tag=header
+    try:
+        lifeSpan = params['contexts']['lifeSpan']
+    except Exception as ex:
+        lifeSpan=0
 
     print(content)
     print(userId)

@@ -15,22 +15,27 @@ def home():
 @app.route('/restaurant', methods=['POST'])
 def restaurant():
     params = request.get_json()
+    print(params)
     userId = params['userRequest']['user']['id']
     userId = userId.replace("\n", "")
     content = params['userRequest']['utterance']
     content = content.replace("\n", "")
     header = content.split(" ")[0]
     try:
-        tag = params['contexts']['name']
+        tag = params['contexts'][0]['name']
     except Exception as ex:
+        print(ex)
         tag=header
     try:
-        lifeSpan = params['contexts']['lifeSpan']
+        lifeSpan = params['contexts'][0]['lifespan']
     except Exception as ex:
+        print(ex)
         lifeSpan=0
 
     print(content)
     print(userId)
+    print("tag : "+tag)
+    print("lifepan : "+str(lifeSpan))
 
     logData = LogDTO(userId, content, tag)
     dbCon.insertLogData(logData)
@@ -82,9 +87,9 @@ def restaurant():
                 "context": {
                     "values": [
                         {
-                            "name": "추천",
-                            "lifespan": 5,
-                            "ttl": 120
+                            "name": "rec",
+                            "lifeSpan": 5,
+                            "ttl":120
                         }
                     ]
                 }
@@ -120,8 +125,8 @@ def restaurant():
                     "context": {
                         "values": [
                             {
-                                "name": "추천",
-                                "lifespan": 4,
+                                "name": "rec",
+                                "lifeSpan": 4,
                                 "ttl": 120
                             }
                         ]
@@ -136,13 +141,6 @@ def restaurant():
                                 "simpleText": {
                                     "text": "입력값 오류! 다시 입력해주세요"
                                 }
-                            }
-                        ],
-                        "outputContexts": [
-                            {
-                                "name": "추천",
-                                "lifespan": 5,
-                                "ttl":120
                             }
                         ]
                     }

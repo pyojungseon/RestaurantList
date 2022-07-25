@@ -77,12 +77,14 @@ def restaurant():
                                 "text": "1.한식 / 2.일식 / 3.중식 / 4.양식 / 5.아시안 / 6.랜덤 중 입력하세요(4 또는 양식)"
                             }
                         }
-                    ],
-                    "outputContexts": [
+                    ]
+                },
+                "context": {
+                    "values": [
                         {
-                            "name":"추천",
-                            "lifespan":5,
-                            "ttl":120
+                            "name": "추천",
+                            "lifespan": 5,
+                            "ttl": 120
                         }
                     ]
                 }
@@ -113,8 +115,10 @@ def restaurant():
                                     "text": "금액대(만원)을 입력하세요(제한없음은 0)"
                                 }
                             }
-                        ],
-                        "outputContexts": [
+                        ]
+                    },
+                    "context": {
+                        "values": [
                             {
                                 "name": "추천",
                                 "lifespan": 4,

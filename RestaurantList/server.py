@@ -3,6 +3,7 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from DTO.LogDTO import LogDTO
+from DTO.ContextDTO import ContextDTO
 from MariaDB.DBCon import DBConnection
 
 app = Flask(__name__)
@@ -18,9 +19,10 @@ def restaurant():
     userId = userId.replace("\n", "")
     content = params['userRequest']['utterance']
     content = content.replace("\n", "")
-    tag = "/"
+    tag = params['outputContexts']['name']
+    lifeSpan = params['outputContexts']['lifeSpan']
     header = content.split(" ")[0]
-    if content[0] == '/':
+    if tag.length == 0:
         tag=header
 
     print(content)
@@ -53,9 +55,7 @@ def restaurant():
                     {
                         "simpleText": {
                             "text": '''BOK본관 부근 음식점 추천 챗봇입니다.
-                            \n다음의 순서로 입력해주세요
-                            \n추천 종류[한식/일식/중식/양식/전체] 금액대(만원)[N] 
-                            \nex)추천 일식 5'''
+                            \n기능 : 추천 / 평가 / 추가'''
                         }
                     }
                 ]
@@ -63,18 +63,86 @@ def restaurant():
         }
     elif header == "추천":
         print("추천 content in")
-        dataSend = {
-            "version": "2.0",
-            "template": {
-                "outputs": [
-                    {
-                        "simpleText": {
-                            "text": '''추천테스트. DB만드느중'''
+        if lifeSpan==0 :
+            dataSend = {
+                "version": "2.0",
+                "template": {
+                    "outputs": [
+                        {
+                            "simpleText": {
+                                "text": "1.한식 / 2.일식 / 3.중식 / 4.양식 / 5.아시안 / 6.랜덤 중 입력하세요(4 또는 양식)"
+                            }
                         }
-                    }
-                ]
+                    ],
+                    "outputContexts": [
+                        {
+                            "name":"추천",
+                            "lifespan":5,
+                            "ttl":120
+                        }
+                    ]
+                }
             }
-        }
+        elif lifeSpan==4 :
+            if content==1 :
+                content="한식"
+            elif content==2:
+                content="일식"
+            elif content==3:
+                content="중식"
+            elif content==4:
+                content="양식"
+            elif content==5:
+                content="아시안"
+            elif content==6:
+                content="랜덤"
+
+            if content=="한식" | content=="일식" | content=="중식" | content=="양식" | content=="아시안" | content=="랜덤" :
+                conData = ContextDTO(userId, tag, lifeSpan, content, 'N')
+                dbCon.insertContextData(conData)
+                dataSend = {
+                    "version": "2.0",
+                    "template": {
+                        "outputs": [
+                            {
+                                "simpleText": {
+                                    "text": "금액대(만원)을 입력하세요(제한없음은 0)"
+                                }
+                            }
+                        ],
+                        "outputContexts": [
+                            {
+                                "name": "추천",
+                                "lifespan": 4,
+                                "ttl": 120
+                            }
+                        ]
+                    }
+                }
+            else :
+                dataSend = {
+                    "version": "2.0",
+                    "template": {
+                        "outputs": [
+                            {
+                                "simpleText": {
+                                    "text": "입력값 오류! 다시 입력해주세요"
+                                }
+                            }
+                        ],
+                        "outputContexts": [
+                            {
+                                "name": "추천",
+                                "lifespan": 5,
+                                "ttl":120
+                            }
+                        ]
+                    }
+                }
+        elif lifeSpan == 3:
+            conData = ContextDTO(userId, tag, lifeSpan, content, 'N')
+            contextData = dbCon.getContextData(conData)
+            print(contextData)
 
     elif header == "김소영":
         print("if문김소영 content in")

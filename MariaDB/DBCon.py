@@ -4,6 +4,7 @@ import configparser
 import os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from DTO.LogDTO import LogDTO
+from DTO.ContextDTO import ContextDTO
 
 class DBConnection:
 
@@ -50,6 +51,33 @@ class DBConnection:
             mateData.append(row)
         return mateData
 
+    def insertContextData(self, conData):
+        cur = self.conn.cursor()
+        print("%s %s %s %s %s" % (conData.id, conData.tag, str(conData.lifespan), conData.text, conData.finish))
+        try:
+            sql = "insert into ContextTable values('" + conData.id + "','" + conData.tag + "','" + str(conData.lifespan)  + "','" + conData.text + "','" + conData.finish + "',current_timestamp, current_timestamp)"
+            print(sql)
+            cur.execute(sql)
+        except Exception as ex:
+            print("insertContextData error")
+            print(ex)
+        self.conn.commit()
+
+    def getContextData(self, conData):
+        cur = self.conn.cursor()
+        print("%s %s" % (conData.id, conData.tag))
+        try:
+            # sql = "select * from ContextTable where(id='" + conData.id + "' and tag='" + conData.tag + "') and rownum<1 order by modDate"
+            sql = "select A.* from (select @ROWNUM:=@ROWNUM+1 AS ROWNUM, id, tag, lifespan, text, finish, regDate, " \
+                  "modDate from ContextTable, (SELECT @ROWNUM:=1) R where(id='" + conData.id + "' and tag='" + \
+                  conData.tag + "') order by ModDate desc) A where ROWNUM=2 "
+            print(sql)
+            cur.execute(sql)
+        except Exception as ex:
+            print("insertContextData error")
+            print(ex)
+        self.conn.commit()
+
     def insertLogData(self, logData):
         cur = self.conn.cursor()
         print("%s %s %s" %(logData.id, logData.content, logData.tag))
@@ -58,6 +86,6 @@ class DBConnection:
             print(sql)
             cur.execute(sql)
         except Exception as ex:
-            print("log insert error")
+            print("insertLogData error")
             print(ex)
         self.conn.commit()

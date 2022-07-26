@@ -174,6 +174,14 @@ def restaurant():
                         }
                     }
                 ]
+            },
+            "context": {
+                "values": [
+                    {
+                        "name": "추천",
+                        "lifeSpan": 0
+                    }
+                ]
             }
         }
     return jsonify(dataSend)

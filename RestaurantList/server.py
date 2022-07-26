@@ -1,6 +1,7 @@
 from flask import Flask, json, request, jsonify
 import sys
 import os
+
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from DTO.LogDTO import LogDTO
 from DTO.ContextDTO import ContextDTO
@@ -8,9 +9,11 @@ from MariaDB.DBCon import DBConnection
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def home():
     return "Hello, Flask"
+
 
 @app.route('/restaurant', methods=['POST'])
 def restaurant():
@@ -25,17 +28,17 @@ def restaurant():
         tag = params['contexts'][0]['name']
     except Exception as ex:
         print(ex)
-        tag=header
+        tag = header
     try:
         lifeSpan = params['contexts'][0]['lifespan']
     except Exception as ex:
         print(ex)
-        lifeSpan=0
+        lifeSpan = 0
 
     print(content)
     print(userId)
-    print("tag : "+tag)
-    print("lifepan : "+str(lifeSpan))
+    print("tag : " + tag)
+    print("lifepan : " + str(lifeSpan))
 
     logData = LogDTO(userId, content, tag)
     dbCon.insertLogData(logData)
@@ -72,7 +75,7 @@ def restaurant():
         }
     elif tag == "추천":
         print("추천 content in")
-        if lifeSpan==5 or lifeSpan==0:
+        if lifeSpan == 5 or lifeSpan == 0:
             dataSend = {
                 "version": "2.0",
                 "template": {
@@ -93,21 +96,22 @@ def restaurant():
                     ]
                 }
             }
-        elif lifeSpan==4 :
-            if content==1 :
-                content="한식"
-            elif content==2:
-                content="일식"
-            elif content==3:
-                content="중식"
-            elif content==4:
-                content="양식"
-            elif content==5:
-                content="아시안"
-            elif content==6:
-                content="랜덤"
+        elif lifeSpan == 4:
+            if content == 1:
+                content = "한식"
+            elif content == 2:
+                content = "일식"
+            elif content == 3:
+                content = "중식"
+            elif content == 4:
+                content = "양식"
+            elif content == 5:
+                content = "아시안"
+            elif content == 6:
+                content = "랜덤"
 
-            if content=="한식" or content=="일식" or content=="중식" or content=="양식" or content=="아시안" or content=="랜덤":
+            print(content)
+            if content == "한식" or content == "일식" or content == "중식" or content == "양식" or content == "아시안" or content == "랜덤":
                 conData = ContextDTO(userId, tag, lifeSpan, content, 'N')
                 dbCon.insertContextData(conData)
                 dataSend = {
@@ -130,7 +134,7 @@ def restaurant():
                         ]
                     }
                 }
-            else :
+            else:
                 dataSend = {
                     "version": "2.0",
                     "template": {
@@ -139,6 +143,14 @@ def restaurant():
                                 "simpleText": {
                                     "text": "입력값 오류! 다시 입력해주세요"
                                 }
+                            }
+                        ]
+                    },
+                    "context": {
+                        "values": [
+                            {
+                                "name": "추천",
+                                "lifeSpan": 0
                             }
                         ]
                     }
@@ -212,6 +224,7 @@ def test():
             }
         }
     return jsonify(dataSend)
+
 
 if __name__ == '__main__':
     dbCon = DBConnection('P')

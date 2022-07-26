@@ -22,12 +22,14 @@ def home():
 @app.route('/restaurant', methods=['POST'])
 def restaurant():
     params = request.get_json()
-    requestDto = requestParsing.parsing(params)
+    parser = requestParsing()
+    requestDto = parser.parsing(params)
 
     logData = LogDTO(requestDto.userId, requestDto.content, requestDto.tag)
     dbCon.insertLogData(logData)
 
-    dataSend = recommend.rec(requestDto)
+    rec_menu = recommend()
+    dataSend = rec_menu.rec(requestDto)
 
     return jsonify(dataSend)
 

@@ -40,7 +40,7 @@ class recommend:
             }
         elif requestDto.tag == "추천":
             print("추천 content in")
-            if lifeSpan == 5 or lifeSpan == 0:
+            if requestDto.lifeSpan == 5 or requestDto.lifeSpan == 0:
                 dataSend = {
                     "version": "2.0",
                     "template": {
@@ -61,21 +61,21 @@ class recommend:
                         ]
                     }
                 }
-            elif lifeSpan == 4:
-                if content == str(1):
-                    content = "한식"
-                elif content == str(2):
-                    content = "일식"
-                elif content == str(3):
-                    content = "중식"
-                elif content == str(4):
-                    content = "양식"
-                elif content == str(5):
-                    content = "아시안"
-                elif content == str(6):
-                    content = "랜덤"
+            elif requestDto.lifeSpan == 4:
+                if requestDto.content == str(1):
+                    requestDto.content = "한식"
+                elif requestDto.content == str(2):
+                    requestDto.content = "일식"
+                elif requestDto.content == str(3):
+                    requestDto.content = "중식"
+                elif requestDto.content == str(4):
+                    requestDto.content = "양식"
+                elif requestDto.content == str(5):
+                    requestDto.content = "아시안"
+                elif requestDto.content == str(6):
+                    requestDto.content = "랜덤"
 
-                if content == "한식" or content == "일식" or content == "중식" or content == "양식" or content == "아시안" or content == "랜덤":
+                if requestDto.content == "한식" or requestDto.content == "일식" or requestDto.content == "중식" or requestDto.content == "양식" or requestDto.content == "아시안" or requestDto.content == "랜덤":
                     conData = ContextDTO(requestDto.userId, requestDto.tag, requestDto.lifeSpan, requestDto.content, 'N')
                     dbCon.insertContextData(conData)
                     dataSend = {

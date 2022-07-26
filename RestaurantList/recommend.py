@@ -122,6 +122,7 @@ class recommend:
                         }
                     }
             elif requestDto.lifeSpan == 3:
+                requestDto.content = int(requestDto.content)
                 if requestDto.content<0 or requestDto.content>13:
                     dataSend = {
                         "version": "2.0",

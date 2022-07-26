@@ -93,7 +93,7 @@ def restaurant():
                     ]
                 }
             }
-        elif lifeSpan==4 :
+        elif lifeSpan==5 :
             if content==1 :
                 content="한식"
             elif content==2:

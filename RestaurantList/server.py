@@ -111,7 +111,7 @@ def restaurant():
                 content = "랜덤"
 
             if content == "한식" or content == "일식" or content == "중식" or content == "양식" or content == "아시안" or content == "랜덤":
-                conData = ContextDTO(userId, context, lifeSpan, content, 'N')
+                conData = ContextDTO(userId, tag, lifeSpan, content, 'N')
                 dbCon.insertContextData(conData)
                 dataSend = {
                     "version": "2.0",

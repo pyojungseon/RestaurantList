@@ -86,7 +86,7 @@ class recommend:
                             "outputs": [
                                 {
                                     "simpleText": {
-                                        "text": "금액대(만원)을 입력하세요(제한없음은 0)"
+                                        "text": "금액대(만원)을 입력하세요(제한없음은 0, 최대값은 12)"
                                     }
                                 }
                             ]
@@ -122,9 +122,51 @@ class recommend:
                         }
                     }
             elif requestDto.lifeSpan == 3:
-                conData = ContextDTO(requestDto.userId, requestDto.tag, requestDto.lifeSpan, requestDto.content, 'N')
-                contextData = dbCon.getContextData(conData)
-                print(contextData)
+                if requestDto.content<0 or requestDto.content>13:
+                    dataSend = {
+                        "version": "2.0",
+                        "template": {
+                            "outputs": [
+                                {
+                                    "simpleText": {
+                                        "text": "입력 금액 오류입니다 다시 입력해주세요"
+                                    }
+                                }
+                            ]
+                        },
+                        "context": {
+                            "values": [
+                                {
+                                    "name": "추천",
+                                    "lifeSpan": 3
+                                }
+                            ]
+                        }
+                    }
+                else:
+                    conData = ContextDTO(requestDto.userId, requestDto.tag, requestDto.lifeSpan, requestDto.content, 'N')
+                    contextData = dbCon.getContextData(conData)
+                    print(contextData)
+                    dataSend = {
+                        "version": "2.0",
+                        "template": {
+                            "outputs": [
+                                {
+                                    "simpleText": {
+                                        "text": "특수목적비용인가요?\n(0:제약없음 1:목성 2:노조비"
+                                    }
+                                }
+                            ]
+                        },
+                        "context": {
+                            "values": [
+                                {
+                                    "name": "추천",
+                                    "lifeSpan": 2
+                                }
+                            ]
+                        }
+                    }
 
         elif requestDto.header == "김소영":
             print("if문김소영 content in")

@@ -70,9 +70,9 @@ def restaurant():
                 ]
             }
         }
-    elif header == "추천":
+    elif tag == "추천":
         print("추천 content in")
-        if lifeSpan==0 :
+        if lifeSpan==5 or lifeSpan==0:
             dataSend = {
                 "version": "2.0",
                 "template": {
@@ -87,9 +87,8 @@ def restaurant():
                 "context": {
                     "values": [
                         {
-                            "name": "rec",
-                            "lifeSpan": 5,
-                            "ttl":120
+                            "name": "추천",
+                            "lifeSpan": 4
                         }
                     ]
                 }
@@ -108,7 +107,7 @@ def restaurant():
             elif content==6:
                 content="랜덤"
 
-            if content=="한식" | content=="일식" | content=="중식" | content=="양식" | content=="아시안" | content=="랜덤" :
+            if content=="한식" or content=="일식" or content=="중식" or content=="양식" or content=="아시안" or content=="랜덤":
                 conData = ContextDTO(userId, tag, lifeSpan, content, 'N')
                 dbCon.insertContextData(conData)
                 dataSend = {
@@ -125,9 +124,8 @@ def restaurant():
                     "context": {
                         "values": [
                             {
-                                "name": "rec",
-                                "lifeSpan": 4,
-                                "ttl": 120
+                                "name": "추천",
+                                "lifeSpan": 3
                             }
                         ]
                     }

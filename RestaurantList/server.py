@@ -1,8 +1,9 @@
 from flask import Flask, json, request, jsonify
+from requestParsing import requestParsing
+from recommend import recommend
 import sys
 import os
-import recommend
-import requestParsing
+
 
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from DTO.LogDTO import LogDTO

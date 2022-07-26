@@ -29,7 +29,7 @@ def restaurant():
     dbCon.insertLogData(logData)
 
     rec_menu = recommend()
-    dataSend = rec_menu.rec(requestDto)
+    dataSend = rec_menu.rec(requestDto, dbCon)
 
     return jsonify(dataSend)
 

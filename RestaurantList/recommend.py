@@ -4,10 +4,11 @@ import sys
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from DTO.requestDTO import RequestDTO
 from DTO.ContextDTO import ContextDTO
+from MariaDB.DBCon import DBConnection
 
 class recommend:
 
-    def rec(self, requestDto):
+    def rec(self, requestDto, dbCon):
 
         if requestDto.header == "아이디":
             print("if문아이디 content in")

@@ -97,22 +97,21 @@ def restaurant():
                 }
             }
         elif lifeSpan == 4:
-            if content == 1:
+            if content == str(1):
                 content = "한식"
-            elif content == 2:
+            elif content == str(2):
                 content = "일식"
-            elif content == 3:
+            elif content == str(3):
                 content = "중식"
-            elif content == 4:
+            elif content == str(4):
                 content = "양식"
-            elif content == 5:
+            elif content == str(5):
                 content = "아시안"
-            elif content == 6:
+            elif content == str(6):
                 content = "랜덤"
 
-            print(content)
             if content == "한식" or content == "일식" or content == "중식" or content == "양식" or content == "아시안" or content == "랜덤":
-                conData = ContextDTO(userId, tag, lifeSpan, content, 'N')
+                conData = ContextDTO(userId, context, lifeSpan, content, 'N')
                 dbCon.insertContextData(conData)
                 dataSend = {
                     "version": "2.0",

@@ -187,7 +187,7 @@ class recommend:
                         "outputs": [
                             {
                                 "simpleText": {
-                                    "text": "요청내용 : "+requestDto.param1+" , "+requestDto.param2+", "+requestDto.param3
+                                    "text": "요청내용 : "+requestDto.param1+" , "+requestDto.param2+", "+requestDto.content+"\nDB 구성중. 구성되고 나면 추천레스토랑 보여줄 것"
                                 }
                             }
                         ]
@@ -200,7 +200,7 @@ class recommend:
                                 "params": {
                                     "param1": requestDto.param1,
                                     "param2": requestDto.param2,
-                                    "param3": requestDto.param3
+                                    "param3": requestDto.content
                                 }
                             }
                         ]

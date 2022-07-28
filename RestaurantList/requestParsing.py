@@ -25,15 +25,15 @@ class requestParsing:
         except Exception as ex:
             lifeSpan = 0
         try:
-            param1 = params['contexts'][0]['param1']['value']
+            param1 = params['contexts'][0]['params']['param1']['value']
         except Exception as ex:
             param1 = ""
         try:
-            param2 = params['contexts'][0]['param2']['value']
+            param2 = params['contexts'][0]['params']['param2']['value']
         except Exception as ex:
             param2 = ""
         try:
-            param3 = params['contexts'][0]['param3']['value']
+            param3 = params['contexts'][0]['params']['param3']['value']
         except Exception as ex:
             param3 = ""
 

@@ -36,18 +36,15 @@ class requestParsing:
             param3 = params['contexts'][0]['param3']
         except Exception as ex:
             param3 = ""
-        try:
-            param4 = params['contexts'][0]['param4']
-        except Exception as ex:
-            param4 = ""
-        try:
-            param5 = params['contexts'][0]['param5']
-        except Exception as ex:
-            param5 = ""
 
+        param4=""
+        param5=""
         print(content)
         print(userId)
         print("tag : " + tag)
         print("lifepan : " + str(lifeSpan))
+        print("param1 : " + str(param1))
+        print("param2 : " + str(param2))
+        print("param3 : " + str(param3))
         dto = RequestDTO(userId, content, header, tag, lifeSpan, param1, param2, param3, param4, param5)
         return dto

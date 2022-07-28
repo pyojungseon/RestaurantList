@@ -119,7 +119,10 @@ class recommend:
                             "values": [
                                 {
                                     "name": "추천",
-                                    "lifeSpan": 0
+                                    "lifeSpan": 0,
+                                    "params": {
+                                        "param1": requestDto.content
+                                    }
                                 }
                             ]
                         }

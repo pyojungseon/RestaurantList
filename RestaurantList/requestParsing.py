@@ -17,18 +17,26 @@ class requestParsing:
         header = content.split(" ")[0]
         try:
             tag = params['contexts'][0]['name']
+            lifeSpan = params['contexts'][0]['lifespan']
+            param1 = params['contexts'][0]['param1']
+            param2= params['contexts'][0]['param2']
+            param3 = params['contexts'][0]['param3']
+            param4 = params['contexts'][0]['param4']
+            param5 = params['contexts'][0]['param5']
         except Exception as ex:
             print(ex)
             tag = header
-        try:
-            lifeSpan = params['contexts'][0]['lifespan']
-        except Exception as ex:
-            print(ex)
             lifeSpan = 0
+            param1 = ""
+            param2 = ""
+            param3 = ""
+            param4 = ""
+            param5 = ""
+
 
         print(content)
         print(userId)
         print("tag : " + tag)
         print("lifepan : " + str(lifeSpan))
-        dto = RequestDTO(userId, content, header, tag, lifeSpan)
+        dto = RequestDTO(userId, content, header, tag, lifeSpan, param1, param2, param3, param4, param5)
         return dto

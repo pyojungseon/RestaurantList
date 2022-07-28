@@ -7,3 +7,9 @@ class RequestDTO:
     header: str = ""
     tag: str = ""
     lifeSpan: int = 0
+    param1: str = ""
+    param2: str = ""
+    param3: str = ""
+    param4: str = ""
+    param5: str = ""
+

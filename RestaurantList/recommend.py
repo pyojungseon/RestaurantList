@@ -95,7 +95,10 @@ class recommend:
                             "values": [
                                 {
                                     "name": "추천",
-                                    "lifeSpan": 3
+                                    "lifeSpan": 3,
+                                    "params": {
+                                        "param1": requestDto.content
+                                    }
                                 }
                             ]
                         }
@@ -139,12 +142,16 @@ class recommend:
                             "values": [
                                 {
                                     "name": "추천",
-                                    "lifeSpan": 3
+                                    "lifeSpan": 2,
+                                    "params": {
+                                        "param1": requestDto.param1,
+                                        "param2": requestDto.content
+                                    }
                                 }
                             ]
                         }
                     }
-                else:
+                elif requestDto.lifeSpan == 2:
                     conData = ContextDTO(requestDto.userId, requestDto.tag, requestDto.lifeSpan, requestDto.content, 'N')
                     contextData = dbCon.getContextData(conData)
                     print(contextData)
@@ -154,7 +161,7 @@ class recommend:
                             "outputs": [
                                 {
                                     "simpleText": {
-                                        "text": "특수목적비용인가요?\n(0:제약없음 1:목성 2:노조비"
+                                        "text": "용도는?\n(0:없음 1:팀장급이상 회식 2:차과장급 회식 3:조사역급 회식 4:목성 5:노조간담회비)"
                                     }
                                 }
                             ]
@@ -163,11 +170,74 @@ class recommend:
                             "values": [
                                 {
                                     "name": "추천",
-                                    "lifeSpan": 2
+                                    "lifeSpan": 1,
+                                    "params": {
+                                        "param1": requestDto.param1,
+                                        "param2": requestDto.param2,
+                                        "param3": requestDto.content
+                                    }
                                 }
                             ]
                         }
                     }
+
+                elif requestDto.lifeSpan == 1:
+                    dataSend = {
+                        "version": "2.0",
+                        "template": {
+                            "outputs": [
+                                {
+                                    "simpleText": {
+                                        "text": "요청내용 : "+requestDto.param1+" , "+requestDto.param2+", "+requestDto.param3+", "+requestDto.param4
+                                    }
+                                }
+                            ]
+                        },
+                        "context": {
+                            "values": [
+                                {
+                                    "name": "추천",
+                                    "lifeSpan": 0,
+                                    "params": {
+                                        "param1": requestDto.param1,
+                                        "param2": requestDto.param2,
+                                        "param3": requestDto.param3,
+                                        "param4": requestDto.param4
+                                    }
+                                }
+                            ]
+                        }
+                    }
+
+                else:
+                    dataSend = {
+                        "version": "2.0",
+                        "template": {
+                            "outputs": [
+                                {
+                                    "simpleText": {
+                                        "text": "입력 금액 오류입니다 다시 입력해주세요"
+                                    }
+                                }
+                            ]
+                        },
+                        "context": {
+                            "values": [
+                                {
+                                    "name": "추천",
+                                    "lifeSpan": 0,
+                                    "params": {
+                                        "param1": "",
+                                        "param2": "",
+                                        "param3": "",
+                                        "param4": "",
+                                        "param5": ""
+                                    }
+                                }
+                            ]
+                        }
+                    }
+
 
         elif requestDto.header == "김소영":
             print("if문김소영 content in")

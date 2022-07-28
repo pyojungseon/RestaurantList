@@ -141,7 +141,7 @@ class recommend:
                             "values": [
                                 {
                                     "name": "추천",
-                                    "lifeSpan": 2,
+                                    "lifeSpan": 3,
                                     "params": {
                                         "param1": requestDto.param1
                                     }
@@ -168,7 +168,7 @@ class recommend:
                             "values": [
                                 {
                                     "name": "추천",
-                                    "lifeSpan": 1,
+                                    "lifeSpan": 2,
                                     "params": {
                                         "param1": requestDto.param1,
                                         "param2": requestDto.content

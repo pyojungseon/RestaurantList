@@ -125,8 +125,7 @@ class recommend:
                         }
                     }
             elif requestDto.lifeSpan == 3:
-                requestDto.content = int(requestDto.content)
-                if requestDto.content<0 or requestDto.content>13:
+                if int(requestDto.content)<0 or int(requestDto.content)>13:
                     dataSend = {
                         "version": "2.0",
                         "template": {
@@ -144,8 +143,7 @@ class recommend:
                                     "name": "추천",
                                     "lifeSpan": 2,
                                     "params": {
-                                        "param1": requestDto.param1,
-                                        "param2": requestDto.content
+                                        "param1": requestDto.param1
                                     }
                                 }
                             ]
@@ -173,8 +171,7 @@ class recommend:
                                     "lifeSpan": 1,
                                     "params": {
                                         "param1": requestDto.param1,
-                                        "param2": requestDto.param2,
-                                        "param3": requestDto.content
+                                        "param2": requestDto.content
                                     }
                                 }
                             ]
@@ -187,7 +184,7 @@ class recommend:
                         "outputs": [
                             {
                                 "simpleText": {
-                                    "text": "요청내용 : "+requestDto.param1+" , "+requestDto.param2+", "+requestDto.param3+", "+requestDto.param4
+                                    "text": "요청내용 : "+requestDto.param1+" , "+requestDto.param2+", "+requestDto.param3
                                 }
                             }
                         ]
@@ -200,8 +197,7 @@ class recommend:
                                 "params": {
                                     "param1": requestDto.param1,
                                     "param2": requestDto.param2,
-                                    "param3": requestDto.param3,
-                                    "param4": requestDto.param4
+                                    "param3": requestDto.param3
                                 }
                             }
                         ]
@@ -214,7 +210,7 @@ class recommend:
                         "outputs": [
                             {
                                 "simpleText": {
-                                    "text": "입력 금액 오류입니다 다시 입력해주세요"
+                                    "text": "입력 오류입니다 다시 입력해주세요"
                                 }
                             }
                         ]

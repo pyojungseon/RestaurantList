@@ -151,7 +151,7 @@ class recommend:
                             ]
                         }
                     }
-                elif requestDto.lifeSpan == 2:
+                else:
                     conData = ContextDTO(requestDto.userId, requestDto.tag, requestDto.lifeSpan, requestDto.content, 'N')
                     contextData = dbCon.getContextData(conData)
                     print(contextData)
@@ -180,63 +180,61 @@ class recommend:
                             ]
                         }
                     }
-
-                elif requestDto.lifeSpan == 1:
-                    dataSend = {
-                        "version": "2.0",
-                        "template": {
-                            "outputs": [
-                                {
-                                    "simpleText": {
-                                        "text": "요청내용 : "+requestDto.param1+" , "+requestDto.param2+", "+requestDto.param3+", "+requestDto.param4
-                                    }
+            elif requestDto.lifeSpan == 2:
+                dataSend = {
+                    "version": "2.0",
+                    "template": {
+                        "outputs": [
+                            {
+                                "simpleText": {
+                                    "text": "요청내용 : "+requestDto.param1+" , "+requestDto.param2+", "+requestDto.param3+", "+requestDto.param4
                                 }
-                            ]
-                        },
-                        "context": {
-                            "values": [
-                                {
-                                    "name": "추천",
-                                    "lifeSpan": 0,
-                                    "params": {
-                                        "param1": requestDto.param1,
-                                        "param2": requestDto.param2,
-                                        "param3": requestDto.param3,
-                                        "param4": requestDto.param4
-                                    }
+                            }
+                        ]
+                    },
+                    "context": {
+                        "values": [
+                            {
+                                "name": "추천",
+                                "lifeSpan": 0,
+                                "params": {
+                                    "param1": requestDto.param1,
+                                    "param2": requestDto.param2,
+                                    "param3": requestDto.param3,
+                                    "param4": requestDto.param4
                                 }
-                            ]
-                        }
+                            }
+                        ]
                     }
-
-                else:
-                    dataSend = {
-                        "version": "2.0",
-                        "template": {
-                            "outputs": [
-                                {
-                                    "simpleText": {
-                                        "text": "입력 금액 오류입니다 다시 입력해주세요"
-                                    }
+                }
+            else:
+                dataSend = {
+                    "version": "2.0",
+                    "template": {
+                        "outputs": [
+                            {
+                                "simpleText": {
+                                    "text": "입력 금액 오류입니다 다시 입력해주세요"
                                 }
-                            ]
-                        },
-                        "context": {
-                            "values": [
-                                {
-                                    "name": "추천",
-                                    "lifeSpan": 0,
-                                    "params": {
-                                        "param1": "",
-                                        "param2": "",
-                                        "param3": "",
-                                        "param4": "",
-                                        "param5": ""
-                                    }
+                            }
+                        ]
+                    },
+                    "context": {
+                        "values": [
+                            {
+                                "name": "추천",
+                                "lifeSpan": 0,
+                                "params": {
+                                    "param1": "",
+                                    "param2": "",
+                                    "param3": "",
+                                    "param4": "",
+                                    "param5": ""
                                 }
-                            ]
-                        }
+                            }
+                        ]
                     }
+                }
 
 
         elif requestDto.header == "김소영":

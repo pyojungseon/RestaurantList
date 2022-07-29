@@ -39,6 +39,10 @@ class requestParsing:
 
         param4=""
         param5=""
+
+        if content=="사용법" or content=="추가":
+            tag = content
+
         print(content)
         print(userId)
         print("tag : " + tag)

@@ -10,37 +10,7 @@ class recommend:
 
     def rec(self, requestDto, dbCon):
 
-        if requestDto.header == "아이디":
-            print("if문아이디 content in")
-            dataSend = {
-                "version": "2.0",
-                "template": {
-                    "outputs": [
-                        {
-                            "simpleText": {
-                                "text": requestDto.userId
-                            }
-                        }
-                    ]
-                }
-            }
-
-        elif requestDto.header == "사용법":
-            print("사용법 content in")
-            dataSend = {
-                "version": "2.0",
-                "template": {
-                    "outputs": [
-                        {
-                            "simpleText": {
-                                "text": '''BOK본관 부근 음식점 추천 챗봇입니다.
-                                \n기능 : 추천 / 평가 / 추가'''
-                            }
-                        }
-                    ]
-                }
-            }
-        elif requestDto.tag == "추천":
+        if requestDto.tag == "추천":
             print("추천 content in")
             if requestDto.lifeSpan == 5 or requestDto.lifeSpan == 0:
                 dataSend = {

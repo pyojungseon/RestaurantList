@@ -21,6 +21,17 @@ class basement:
                             }
                         }
                     ]
+                },
+                "context": {
+                    "values": [
+                        {
+                            "name": "추가",
+                            "lifeSpan": 0
+                        },{
+                            "name": "추천",
+                            "lifeSpan": 0
+                        }
+                    ]
                 }
             }
 

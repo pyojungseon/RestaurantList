@@ -40,7 +40,7 @@ class requestParsing:
         param4=""
         param5=""
 
-        if content=="사용법" or content=="추가":
+        if content=="사용법" or content=="추가" or content=="추천":
             tag = content
 
         print(content)

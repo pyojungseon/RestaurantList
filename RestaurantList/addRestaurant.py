@@ -58,7 +58,7 @@ class addRestaurant:
                     }
                 }
             elif requestDto.lifeSpan == 3:
-                if int(requestDto.content)<0 or int(requestDto.content)>7:
+                if int(requestDto.content)>0 or int(requestDto.content)<7:
                     dataSend = {
                         "version": "2.0",
                         "template": {
@@ -90,7 +90,7 @@ class addRestaurant:
                             "outputs": [
                                 {
                                     "simpleText": {
-                                        "text": "입력값 오류. 금액대를 다시 입력해주세요"
+                                        "text": "입력값 오류. 종류를 다시 입력해주세요"
                                     }
                                 }
                             ]
@@ -99,41 +99,65 @@ class addRestaurant:
                             "values": [
                                 {
                                     "name": "추가",
-                                    "lifeSpan": 2,
+                                    "lifeSpan": 4,
                                     "params": {
-                                        "param1": requestDto.param1,
-                                        "param2": requestDto.param2
+                                        "param1": requestDto.param1
                                     }
                                 }
                             ]
                         }
                     }
             elif requestDto.lifeSpan == 2:
-                dataSend = {
-                    "version": "2.0",
-                    "template": {
-                        "outputs": [
-                            {
-                                "simpleText": {
-                                    "text": "요청내용 : "+requestDto.param1+" , "+requestDto.param2+", "+requestDto.content+"\nDB 구성중. 구성되고 나면 레스토랑 추가 기능 수행"
+                if int(requestDto.content) > 0 or int(requestDto.content) < 21:
+                    dataSend = {
+                        "version": "2.0",
+                        "template": {
+                            "outputs": [
+                                {
+                                    "simpleText": {
+                                        "text": "요청내용 : "+requestDto.param1+" , "+requestDto.param2+", "+requestDto.content+"\nDB 구성중. 구성되고 나면 레스토랑 추가 기능 수행"
+                                    }
                                 }
-                            }
-                        ]
-                    },
-                    "context": {
-                        "values": [
-                            {
-                                "name": "추가",
-                                "lifeSpan": 0,
-                                "params": {
-                                    "param1": requestDto.param1,
-                                    "param2": requestDto.param2,
-                                    "param3": requestDto.content
+                            ]
+                        },
+                        "context": {
+                            "values": [
+                                {
+                                    "name": "추가",
+                                    "lifeSpan": 0,
+                                    "params": {
+                                        "param1": requestDto.param1,
+                                        "param2": requestDto.param2,
+                                        "param3": requestDto.content
+                                    }
                                 }
-                            }
-                        ]
+                            ]
+                        }
                     }
-                }
+                else:
+                    dataSend = {
+                        "version": "2.0",
+                        "template": {
+                            "outputs": [
+                                {
+                                    "simpleText": {
+                                        "text": "입력값 오류. 금액을 다시 입력해주세요"
+                                    }
+                                }
+                            ]
+                        },
+                        "context": {
+                            "values": [
+                                {
+                                    "name": "추가",
+                                    "lifeSpan": 3,
+                                    "params": {
+                                        "param1": requestDto.param1
+                                    }
+                                }
+                            ]
+                        }
+                    }
             else:
                 dataSend = {
                     "version": "2.0",

@@ -15,25 +15,30 @@ class requestParsing:
         content = params['userRequest']['utterance']
         content = content.replace("\n", "")
         header = content.split(" ")[0]
-        try:
-            tag = params['contexts'][0]['name']
-        except Exception as ex:
-            print(ex)
+
+        contextSize = len(params['context'])
+        tagPoint = 0
+        if contextSize>0:
+            for i in range(0,contextSize):
+                if int(params['contexts'][i]['lifespan'])<5:
+                    tag = params['contexts'][i]['name']
+                    lifeSpan = params['contexts'][i]['lifespan']
+                    tagPoint=i
+                    break
+        else:
             tag = header
-        try:
-            lifeSpan = params['contexts'][0]['lifespan']
-        except Exception as ex:
             lifeSpan = 0
+
         try:
-            param1 = params['contexts'][0]['params']['param1']['value']
+            param1 = params['contexts'][tagPoint]['params']['param1']['value']
         except Exception as ex:
             param1 = ""
         try:
-            param2 = params['contexts'][0]['params']['param2']['value']
+            param2 = params['contexts'][tagPoint]['params']['param2']['value']
         except Exception as ex:
             param2 = ""
         try:
-            param3 = params['contexts'][0]['params']['param3']['value']
+            param3 = params['contexts'][tagPoint]['params']['param3']['value']
         except Exception as ex:
             param3 = ""
 

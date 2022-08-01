@@ -30,6 +30,12 @@ class basement:
                         },{
                             "name": "추천",
                             "lifeSpan": 0
+                        },{
+                            "name": "삭제",
+                            "lifeSpan": 0
+                        },{
+                            "name": "평가",
+                            "lifeSpan": 0
                         }
                     ]
                 }

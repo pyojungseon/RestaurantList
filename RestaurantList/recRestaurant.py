@@ -6,7 +6,7 @@ from DTO.requestDTO import RequestDTO
 from DTO.ContextDTO import ContextDTO
 from MariaDB.DBCon import DBConnection
 
-class recommend:
+class recRestaurant:
 
     def rec(self, requestDto, dbCon):
 

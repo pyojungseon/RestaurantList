@@ -1,6 +1,6 @@
 from flask import Flask, json, request, jsonify
 from requestParsing import requestParsing
-from recommend import recommend
+from recRestaurant import recRestaurant
 from basement import basement
 from addRestaurant import addRestaurant
 from delRestaurant import delRestaurant
@@ -33,7 +33,7 @@ def restaurant():
     dbCon.insertLogData(logData)
 
     if requestDto.tag=='추천':
-        rec_menu = recommend()
+        rec_menu = recRestaurant()
         dataSend = rec_menu.rec(requestDto, dbCon)
     elif requestDto.tag=='추가':
         add_res = addRestaurant()

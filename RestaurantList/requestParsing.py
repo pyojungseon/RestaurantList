@@ -16,8 +16,9 @@ class requestParsing:
         content = content.replace("\n", "")
         header = content.split(" ")[0]
 
-        contextSize = len(params['context'])
+        contextSize = len(params['contexts'])
         tagPoint = 0
+        lifeSpan = 0
         if contextSize>0:
             for i in range(0,contextSize):
                 if int(params['contexts'][i]['lifespan'])<5:

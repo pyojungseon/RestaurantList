@@ -44,7 +44,7 @@ def restaurant():
         eval_res = evalRestaurant()
         dataSend = eval_res.evalRes(requestDto, dbCon)
     elif requestDto.tag=='건의':
-        sug_res = suggestion(requestDto, dbCon)
+        sug_res = suggestion()
         dataSend = sug_res.sug(requestDto, dbCon)
     else:
         base_ment = basement()

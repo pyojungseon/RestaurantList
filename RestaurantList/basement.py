@@ -17,7 +17,7 @@ class basement:
                         {
                             "simpleText": {
                                 "text": '''BOK본관 부근 음식점 추천 챗봇입니다.
-                                \n기능 : 추천 / 평가 / 추가 / 삭제'''
+                                \n기능 : 추천 / 평가 / 추가 / 삭제 / 건의'''
                             }
                         }
                     ]
@@ -41,6 +41,20 @@ class basement:
                 }
             }
 
+        elif requestDto.header == "아이디":
+            print("if문 아이디 content in")
+            dataSend = {
+                "version": "2.0",
+                "template": {
+                    "outputs": [
+                        {
+                            "simpleText": {
+                                "text": "Hash : "+requestDto.userId
+                            }
+                        }
+                    ]
+                }
+            }
         elif requestDto.header == "김소영":
             print("if문김소영 content in")
             dataSend = {

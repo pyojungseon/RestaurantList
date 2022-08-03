@@ -1,7 +1,6 @@
 import dataclasses as dc
 
 @dc.dataclass(unsafe_hash=True)
-class LogDTO:
+class sugDTO:
     id : str = ""
     content : str = ""
-    tag : str = ""

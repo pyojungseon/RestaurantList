@@ -3,14 +3,15 @@ import sys
 
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from DTO.requestDTO import RequestDTO
+from DTO.sugDTO import sugDTO
 from MariaDB.DBCon import DBConnection
 
-class delRestaurant:
+class suggestion:
 
-    def delRes(self, requestDto, dbCon):
+    def sug(self, requestDto, dbCon):
 
-        if requestDto.tag == "삭제":
-            print("삭제 content in")
+        if requestDto.tag == "건의":
+            print("건의 content in")
             if requestDto.lifeSpan == 5 or requestDto.lifeSpan == 0:
                 dataSend = {
                     "version": "2.0",
@@ -18,7 +19,7 @@ class delRestaurant:
                         "outputs": [
                             {
                                 "simpleText": {
-                                    "text": "삭제기능 구현 중"
+                                    "text": "건의사항을 입력해주세요"
                                 }
                             }
                         ]
@@ -26,20 +27,22 @@ class delRestaurant:
                     "context": {
                         "values": [
                             {
-                                "name": "삭제",
-                                "lifeSpan": 5
+                                "name": "건의",
+                                "lifeSpan": 4
                             }
                         ]
                     }
                 }
             elif requestDto.lifeSpan == 4:
+                sugData = sugDTO(requestDto.userId, requestDto.content)
+                dbCon.insertSugData(sugData)
                 dataSend = {
                     "version": "2.0",
                     "template": {
                         "outputs": [
                             {
                                 "simpleText": {
-                                    "text": "삭제기능 구현 중"
+                                    "text": "접수되었습니다. 감사합니다."
                                 }
                             }
                         ]
@@ -47,8 +50,8 @@ class delRestaurant:
                     "context": {
                         "values": [
                             {
-                                "name": "삭제",
-                                "lifeSpan": 5,
+                                "name": "건의",
+                                "lifeSpan": 0,
                                 "params": {
                                     "param1": requestDto.content
                                 }
@@ -71,7 +74,7 @@ class delRestaurant:
                     "context": {
                         "values": [
                             {
-                                "name": "삭제",
+                                "name": "건의",
                                 "lifeSpan": 0,
                                 "params": {
                                     "param1": "",
@@ -100,7 +103,7 @@ class delRestaurant:
                 "context": {
                     "values": [
                         {
-                            "name": "삭제",
+                            "name": "건의",
                             "lifeSpan": 0
                         }
                     ]

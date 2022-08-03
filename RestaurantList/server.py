@@ -8,10 +8,8 @@ from evalRestaurant import evalRestaurant
 import sys
 import os
 
-
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
-from DTO.LogDTO import LogDTO
-from DTO.ContextDTO import ContextDTO
+from DTO.logDTO import logDTO
 from DTO.requestDTO import RequestDTO
 from MariaDB.DBCon import DBConnection
 
@@ -29,7 +27,7 @@ def restaurant():
     parser = requestParsing()
     requestDto = parser.parsing(params)
 
-    logData = LogDTO(requestDto.userId, requestDto.content, requestDto.tag)
+    logData = logDTO(requestDto.userId, requestDto.content, requestDto.tag)
     dbCon.insertLogData(logData)
 
     if requestDto.tag=='추천':

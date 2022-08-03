@@ -8,3 +8,11 @@ finish nvarchar(1) not null,
 regDate timestamp,
 modDate timestamp
 );
+
+
+create table SugTable
+(
+id nvarchar(100) not null,
+text nvarchar(1000),
+regDate timestamp
+);

@@ -3,7 +3,6 @@ import sys
 
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from DTO.requestDTO import RequestDTO
-from DTO.ContextDTO import ContextDTO
 from MariaDB.DBCon import DBConnection
 
 class recRestaurant:
@@ -48,8 +47,7 @@ class recRestaurant:
                     requestDto.content = "랜덤"
 
                 if requestDto.content == "한식" or requestDto.content == "일식" or requestDto.content == "중식" or requestDto.content == "양식" or requestDto.content == "아시안" or requestDto.content == "랜덤":
-                    conData = ContextDTO(requestDto.userId, requestDto.tag, requestDto.lifeSpan, requestDto.content, 'N')
-                    dbCon.insertContextData(conData)
+                    conData = contextDTO(requestDto.userId, requestDto.tag, requestDto.lifeSpan, requestDto.content, 'N')
                     dataSend = {
                         "version": "2.0",
                         "template": {
@@ -123,16 +121,14 @@ class recRestaurant:
                         }
                     }
                 else:
-                    conData = ContextDTO(requestDto.userId, requestDto.tag, requestDto.lifeSpan, requestDto.content, 'N')
-                    contextData = dbCon.getContextData(conData)
-                    print(contextData)
+                    conData = contextDTO(requestDto.userId, requestDto.tag, requestDto.lifeSpan, requestDto.content, 'N')
                     dataSend = {
                         "version": "2.0",
                         "template": {
                             "outputs": [
                                 {
                                     "simpleText": {
-                                        "text": "용도는?\n(0:없음 1:팀장급이상 회식 2:차과장급 회식 3:조사역급 회식 4:목성 5:노조간담회비)"
+                                        "text": "용도는?\n(0:없음 1:팀장급이상 회식 2:차과장급 회식 3:조사역급 회식 4:목성 5:노조간담회비 6:야식가능(PAYCO))"
                                     }
                                 }
                             ]

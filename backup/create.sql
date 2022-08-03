@@ -10,7 +10,7 @@ modDate timestamp
 );
 
 
-create table SugTable
+create table SugTBL
 (
 id nvarchar(100) not null,
 text nvarchar(1000),

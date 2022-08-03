@@ -5,6 +5,7 @@ from basement import basement
 from addRestaurant import addRestaurant
 from delRestaurant import delRestaurant
 from evalRestaurant import evalRestaurant
+from suggestion import suggestion
 import sys
 import os
 
@@ -42,6 +43,9 @@ def restaurant():
     elif requestDto.tag=='평가':
         eval_res = evalRestaurant()
         dataSend = eval_res.evalRes(requestDto, dbCon)
+    elif requestDto.tag=='건의':
+        sug_res = suggestion(requestDto, dbCon)
+        dataSend = sug_res.sug(requestDto, dbCon)
     else:
         base_ment = basement()
         dataSend = base_ment.ment(requestDto)

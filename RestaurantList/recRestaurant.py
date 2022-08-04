@@ -47,7 +47,6 @@ class recRestaurant:
                     requestDto.content = "랜덤"
 
                 if requestDto.content == "한식" or requestDto.content == "일식" or requestDto.content == "중식" or requestDto.content == "양식" or requestDto.content == "아시안" or requestDto.content == "랜덤":
-                    conData = contextDTO(requestDto.userId, requestDto.tag, requestDto.lifeSpan, requestDto.content, 'N')
                     dataSend = {
                         "version": "2.0",
                         "template": {
@@ -121,7 +120,6 @@ class recRestaurant:
                         }
                     }
                 else:
-                    conData = contextDTO(requestDto.userId, requestDto.tag, requestDto.lifeSpan, requestDto.content, 'N')
                     dataSend = {
                         "version": "2.0",
                         "template": {

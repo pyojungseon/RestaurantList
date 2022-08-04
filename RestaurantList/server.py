@@ -3,7 +3,7 @@ from requestParsing import requestParsing
 from recRestaurant import recRestaurant
 from basement import basement
 from addRestaurant import addRestaurant
-from delRestaurant import delRestaurant
+from modRestaurant import modRestaurant
 from evalRestaurant import evalRestaurant
 from suggestion import suggestion
 import sys
@@ -37,9 +37,9 @@ def restaurant():
     elif requestDto.tag=='추가':
         add_res = addRestaurant()
         dataSend = add_res.add(requestDto, dbCon)
-    elif requestDto.tag=='삭제':
-        del_res = delRestaurant()
-        dataSend = del_res.delRes(requestDto, dbCon)
+    elif requestDto.tag=='수정':
+        mod_res = modRestaurant()
+        dataSend = mod_res.delRes(requestDto, dbCon)
     elif requestDto.tag=='평가':
         eval_res = evalRestaurant()
         dataSend = eval_res.evalRes(requestDto, dbCon)

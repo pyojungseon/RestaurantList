@@ -27,7 +27,7 @@ class modRestaurant:
                         "values": [
                             {
                                 "name": "수정",
-                                "lifeSpan": 5
+                                "lifeSpan": 4
                             }
                         ]
                     }

@@ -47,7 +47,7 @@ class requestParsing:
         param4=""
         param5=""
 
-        if content=="사용법" or content=="추가" or content=="추천" or content=="삭제" or content=="평가" or content=="건의":
+        if content=="사용법" or content=="추가" or content=="추천" or content=="수정" or content=="평가" or content=="건의":
             tag = content
 
         print(content)

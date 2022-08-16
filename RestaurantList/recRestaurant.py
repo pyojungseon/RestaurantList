@@ -73,7 +73,7 @@ class recRestaurant:
                         "outputs": [
                             {
                                 "simpleText": {
-                                    "text": "금액확인"
+                                    "text": "요청내용 : "+requestDto.param1+" , "+requestDto.param2+", "+requestDto.content+"\nDB 구성중. 구성되고 나면 추천레스토랑 보여줄 것"
                                 }
                             }
                         ]
@@ -82,11 +82,11 @@ class recRestaurant:
                         "values": [
                             {
                                 "name": "추천",
-                                "lifeSpan": 3,
+                                "lifeSpan": 0,
                                 "params": {
-                                    "param1": requestDto.param1,
-                                    "param2": requestDto.param2,
-                                    "param3": requestDto.param3
+                                    "param1": "",
+                                    "param2": "",
+                                    "param3": ""
                                 }
                             }
                         ]
@@ -100,7 +100,7 @@ class recRestaurant:
                         "outputs": [
                             {
                                 "simpleText": {
-                                    "text": "요청내용 : "+requestDto.param1+" , "+requestDto.param2+", "+requestDto.content+"\nDB 구성중. 구성되고 나면 추천레스토랑 보여줄 것"
+                                    "text": "2요청내용 : "+requestDto.param1+" , "+requestDto.param2+", "+requestDto.content+"\nDB 구성중. 구성되고 나면 추천레스토랑 보여줄 것"
                                 }
                             }
                         ]
@@ -111,9 +111,9 @@ class recRestaurant:
                                 "name": "추천",
                                 "lifeSpan": 0,
                                 "params": {
-                                    "param1": requestDto.param1,
-                                    "param2": requestDto.param2,
-                                    "param3": requestDto.param3
+                                    "param1": "",
+                                    "param2": "",
+                                    "param3": ""
                                 }
                             }
                         ]

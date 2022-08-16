@@ -22,7 +22,7 @@ def home():
     return "Hello, Flask"
 
 
-@app.route('/recommend', methods=['POST'])
+@app.route('/restaurant/recommend', methods=['POST'])
 def recommend():
     params = request.get_json()
     parser = requestParsing()

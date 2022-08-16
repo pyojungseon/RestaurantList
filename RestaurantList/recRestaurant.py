@@ -28,7 +28,12 @@ class recRestaurant:
                         "values": [
                             {
                                 "name": "추천",
-                                "lifeSpan": 4
+                                "lifeSpan": 4,
+                                "params": {
+                                    "param1": requestDto.param1,
+                                    "param2": requestDto.param2,
+                                    "param3": requestDto.param3
+                                }
                             }
                         ]
                     }
@@ -66,7 +71,9 @@ class recRestaurant:
                                     "name": "추천",
                                     "lifeSpan": 3,
                                     "params": {
-                                        "param1": requestDto.content
+                                        "param1": requestDto.param1,
+                                        "param2": requestDto.param2,
+                                        "param3": requestDto.param3
                                     }
                                 }
                             ]
@@ -90,7 +97,9 @@ class recRestaurant:
                                     "name": "추천",
                                     "lifeSpan": 0,
                                     "params": {
-                                        "param1": requestDto.content
+                                        "param1": requestDto.param1,
+                                        "param2": requestDto.param2,
+                                        "param3": requestDto.param3
                                     }
                                 }
                             ]
@@ -116,7 +125,9 @@ class recRestaurant:
                                     "name": "추천",
                                     "lifeSpan": 3,
                                     "params": {
-                                        "param1": requestDto.param1
+                                        "param1": requestDto.param1,
+                                        "param2": requestDto.param2,
+                                        "param3": requestDto.param3
                                     }
                                 }
                             ]
@@ -141,7 +152,8 @@ class recRestaurant:
                                     "lifeSpan": 2,
                                     "params": {
                                         "param1": requestDto.param1,
-                                        "param2": requestDto.content
+                                        "param2": requestDto.param2,
+                                        "param3": requestDto.param3
                                     }
                                 }
                             ]
@@ -168,7 +180,7 @@ class recRestaurant:
                                 "params": {
                                     "param1": requestDto.param1,
                                     "param2": requestDto.param2,
-                                    "param3": requestDto.content
+                                    "param3": requestDto.param3
                                 }
                             }
                         ]

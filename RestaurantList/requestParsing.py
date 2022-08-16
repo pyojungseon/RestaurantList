@@ -34,7 +34,6 @@ class requestParsing:
         try:
             param1 = params['action']['clientExtra']['param1']
         except Exception as ex:
-            print(ex)
             param1 = ""
         try:
             param2 = params['action']['clientExtra']['param2']

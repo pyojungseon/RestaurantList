@@ -58,30 +58,56 @@ class modRestaurant:
                     }
                 }
             elif requestDto.lifeSpan == 3:
-                dataSend = {
-                    "version": "2.0",
-                    "template": {
-                        "outputs": [
-                            {
-                                "simpleText": {
-                                    "text": requestDto.content + ": 수정할 내용을 입력해주세요"
+                if requestDto.content==3:
+                    dataSend = {
+                        "version": "2.0",
+                        "template": {
+                            "outputs": [
+                                {
+                                    "simpleText": {
+                                        "text": requestDto.param1 + ": 삭제 요청이 되었습니다. 2명이상 신고시 삭제됩니다."
+                                    }
                                 }
-                            }
-                        ]
-                    },
-                    "context": {
-                        "values": [
-                            {
-                                "name": "수정",
-                                "lifeSpan": 2,
-                                "params": {
-                                    "param1": requestDto.param1,
-                                    "param2": requestDto.content
+                            ]
+                        },
+                        "context": {
+                            "values": [
+                                {
+                                    "name": "수정",
+                                    "lifeSpan": 5,
+                                    "params": {
+                                        "param1": requestDto.param1,
+                                        "param2": requestDto.content
+                                    }
                                 }
-                            }
-                        ]
+                            ]
+                        }
                     }
-                }
+                else:
+                    dataSend = {
+                        "version": "2.0",
+                        "template": {
+                            "outputs": [
+                                {
+                                    "simpleText": {
+                                        "text": requestDto.content + ": 수정할 내용을 입력해주세요"
+                                    }
+                                }
+                            ]
+                        },
+                        "context": {
+                            "values": [
+                                {
+                                    "name": "수정",
+                                    "lifeSpan": 2,
+                                    "params": {
+                                        "param1": requestDto.param1,
+                                        "param2": requestDto.content
+                                    }
+                                }
+                            ]
+                        }
+                    }
             elif requestDto.lifeSpan == 2:
                 dataSend = {
                     "version": "2.0",

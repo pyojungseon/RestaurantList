@@ -22,6 +22,22 @@ def home():
     return "Hello, Flask"
 
 
+@app.route('/restaurant/recommend', methods=['POST'])
+def restaurant():
+    params = request.get_json()
+    parser = requestParsing()
+    requestDto = parser.parsing(params)
+    requestDto.tag="추천"
+
+    logData = logDTO(requestDto.userId, requestDto.content, requestDto.tag)
+    dbCon.insertLogData(logData)
+
+    rec_menu = recRestaurant()
+    dataSend = rec_menu.rec(requestDto, dbCon)
+
+    return jsonify(dataSend)
+
+
 @app.route('/restaurant', methods=['POST'])
 def restaurant():
     params = request.get_json()

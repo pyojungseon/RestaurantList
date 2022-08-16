@@ -73,34 +73,7 @@ class recRestaurant:
                         "outputs": [
                             {
                                 "simpleText": {
-                                    "text": "금액확인"
-                                }
-                            }
-                        ]
-                    },
-                    "context": {
-                        "values": [
-                            {
-                                "name": "추천",
-                                "lifeSpan": 3,
-                                "params": {
-                                    "param1": requestDto.param1,
-                                    "param2": requestDto.param2,
-                                    "param3": requestDto.param3
-                                }
-                            }
-                        ]
-                    }
-                }
-            elif requestDto.lifeSpan == 2:
-                print("추천 content in lifespan = "+str(requestDto.lifeSpan))
-                dataSend = {
-                    "version": "2.0",
-                    "template": {
-                        "outputs": [
-                            {
-                                "simpleText": {
-                                    "text": "요청내용 : "+requestDto.param1+" , "+requestDto.param2+", "+requestDto.content+"\nDB 구성중. 구성되고 나면 추천레스토랑 보여줄 것"
+                                    "text": "요청내용 : "+requestDto.param1+" , "+requestDto.param2+", "+requestDto.param3+"\nDB 구성중. 구성되고 나면 추천레스토랑 보여줄 것"
                                 }
                             }
                         ]

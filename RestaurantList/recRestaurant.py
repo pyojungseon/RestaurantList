@@ -82,11 +82,11 @@ class recRestaurant:
                         "values": [
                             {
                                 "name": "추천",
-                                "lifeSpan": 0,
+                                "lifeSpan": 2,
                                 "params": {
-                                    "param1": "",
-                                    "param2": "",
-                                    "param3": ""
+                                    "param1": requestDto.param1,
+                                    "param2": requestDto.param2,
+                                    "param3": requestDto.param3
                                 }
                             }
                         ]

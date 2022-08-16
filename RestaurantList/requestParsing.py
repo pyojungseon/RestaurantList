@@ -31,18 +31,27 @@ class requestParsing:
             tag = header
             lifeSpan = 0
 
-        try:
+        if not params['action']['clientExtra']['param1']:
             param1 = params['action']['clientExtra']['param1']
-        except Exception as ex:
-            param1 = ""
-        try:
+        elif not params['contexts'][tagPoint]['params']['param1']['value']:
+            param1 = params['contexts'][tagPoint]['params']['param1']['value']
+        else:
+            param1=""
+
+        if not params['action']['clientExtra']['param2']:
             param2 = params['action']['clientExtra']['param2']
-        except Exception as ex:
-            param2 = ""
-        try:
+        elif not params['contexts'][tagPoint]['params']['param2']['value']:
+            param2 = params['contexts'][tagPoint]['params']['param2']['value']
+        else:
+            param2=""
+
+        if not params['action']['clientExtra']['param3']:
             param3 = params['action']['clientExtra']['param3']
-        except Exception as ex:
-            param3 = ""
+        elif not params['contexts'][tagPoint]['params']['param3']['value']:
+            param3 = params['contexts'][tagPoint]['params']['param3']['value']
+        else:
+            param3=""
+
 
         param4=""
         param5=""

@@ -7,29 +7,28 @@ from DTO.requestDTO import RequestDTO
 
 class requestParsing:
 
-    def parsing(self, params):
+    def parsing(self, params, header):
         print(params)
 
         userId = params['userRequest']['user']['id']
         userId = userId.replace("\n", "")
         content = params['userRequest']['utterance']
         content = content.replace("\n", "")
-        header = content.split(" ")[0]
 
         contextSize = len(params['contexts'])
         tagPoint = 0
         lifeSpan = 0
-        tag = ""
-        if contextSize>0:
-            for i in range(0,contextSize):
-                if int(params['contexts'][i]['lifespan'])<5:
-                    tag = params['contexts'][i]['name']
-                    lifeSpan = params['contexts'][i]['lifespan']
-                    tagPoint=i
-                    break
-        else:
-            tag = header
-            lifeSpan = 0
+        tag = header
+        #if contextSize>0:
+        #    for i in range(0,contextSize):
+        #        if int(params['contexts'][i]['lifespan'])<5:
+        #            tag = params['contexts'][i]['name']
+        #            lifeSpan = params['contexts'][i]['lifespan']
+        #            tagPoint=i
+        #            break
+        #else:
+        #    tag = header
+        #    lifeSpan = 0
 
         try:
             param1 = params['action']['clientExtra']['param1']

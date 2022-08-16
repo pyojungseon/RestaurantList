@@ -26,8 +26,7 @@ def home():
 def recommend():
     params = request.get_json()
     parser = requestParsing()
-    requestDto = parser.parsing(params)
-    requestDto.tag="추천"
+    requestDto = parser.parsing(params, "추천")
 
     logData = logDTO(requestDto.userId, requestDto.content, requestDto.tag)
     dbCon.insertLogData(logData)

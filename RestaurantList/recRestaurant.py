@@ -12,7 +12,7 @@ class recRestaurant:
         if requestDto.tag == "추천":
             print("추천 content in")
             if requestDto.lifeSpan == 5 or requestDto.lifeSpan == 0:
-                print("추천 content in lifespan = "+requestDto.lifeSpan)
+                print("추천 content in lifespan = "+str(requestDto.lifeSpan))
                 dataSend = {
                     "version": "2.0",
                     "template": {
@@ -39,7 +39,7 @@ class recRestaurant:
                     }
                 }
             elif requestDto.lifeSpan == 4:
-                print("추천 content in lifespan = " + requestDto.lifeSpan)
+                print("추천 content in lifespan = "+str(requestDto.lifeSpan))
                 if requestDto.content == str(1):
                     requestDto.content = "한식"
                 elif requestDto.content == str(2):
@@ -106,7 +106,7 @@ class recRestaurant:
                         }
                     }
             elif requestDto.lifeSpan == 3:
-                print("추천 content in lifespan = " + requestDto.lifeSpan)
+                print("추천 content in lifespan = "+str(requestDto.lifeSpan))
                 if int(requestDto.content)<0 or int(requestDto.content)>13:
                     dataSend = {
                         "version": "2.0",
@@ -160,7 +160,7 @@ class recRestaurant:
                         }
                     }
             elif requestDto.lifeSpan == 2:
-                print("추천 content in lifespan = " + requestDto.lifeSpan)
+                print("추천 content in lifespan = "+str(requestDto.lifeSpan))
                 dataSend = {
                     "version": "2.0",
                     "template": {

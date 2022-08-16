@@ -32,7 +32,7 @@ class requestParsing:
             lifeSpan = 0
 
         try:
-            param1 = params['contexts'][tagPoint]['params']['param1']['value']
+            param1 = params['action']['clientExtra']['param1']['value']
         except Exception as ex:
             param1 = ""
         try:

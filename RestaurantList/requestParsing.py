@@ -19,16 +19,12 @@ class requestParsing:
         tagPoint = 0
         lifeSpan = 0
         tag = header
-        #if contextSize>0:
-        #    for i in range(0,contextSize):
-        #        if int(params['contexts'][i]['lifespan'])<5:
-        #            tag = params['contexts'][i]['name']
-        #            lifeSpan = params['contexts'][i]['lifespan']
-        #            tagPoint=i
-        #            break
-        #else:
-        #    tag = header
-        #    lifeSpan = 0
+        if contextSize>0:
+            for i in range(0,contextSize):
+                if int(params['contexts'][i]['lifespan'])<5 and params['contexts'][i]['name']==tag:
+                    lifeSpan = params['contexts'][i]['lifespan']
+                    tagPoint=i
+                    break
 
         try:
             param1 = params['action']['clientExtra']['param1']

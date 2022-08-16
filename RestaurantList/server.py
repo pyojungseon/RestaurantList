@@ -23,7 +23,7 @@ def home():
 
 
 @app.route('/recommend', methods=['POST'])
-def restaurant():
+def recommend():
     params = request.get_json()
     parser = requestParsing()
     requestDto = parser.parsing(params)

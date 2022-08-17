@@ -24,13 +24,13 @@ class basement:
                                     "label": "추천",
                                     "action": "block",
                                     "messageText": "추천",
-                                    "blockid": "62fb28a0fb4d7520b2bbd64b"
+                                    "blockId": "62fb28a0fb4d7520b2bbd64b"
                                 },
                                 {
                                     "label": "건의",
                                     "action": "block",
                                     "messageText": "건의",
-                                    "blockid": "62fb2254f534cf44c78ed656"
+                                    "blockId": "62fb2254f534cf44c78ed656"
                                 }
                             ]
                         }

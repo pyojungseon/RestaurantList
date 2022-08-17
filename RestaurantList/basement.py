@@ -29,13 +29,11 @@ class basement:
                                     {
                                         "action": "block",
                                         "label": "추천",
-                                        "messageText": "추천기능입니다.",
                                         "blockId": "62fb28a0fb4d7520b2bbd64b"
                                     },
                                     {
                                         "label": "건의",
                                         "action": "block",
-                                        "messageText": "건의기능입니다.",
                                         "blockId": "62fb2254f534cf44c78ed656"
                                     }
                                 ]

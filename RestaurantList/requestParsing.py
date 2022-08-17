@@ -41,7 +41,6 @@ class requestParsing:
                 param2 = params['contexts'][tagPoint]['params']['param2']['value']
             except Exception as ex:
                 param2 = ""
-
         try:
             param3 = params['action']['clientExtra']['param3']
         except Exception as ex:
@@ -49,6 +48,7 @@ class requestParsing:
                 param3 = params['contexts'][tagPoint]['params']['param3']['value']
             except Exception as ex:
                 param3 = ""
+
 
         param4=""
         param5=""

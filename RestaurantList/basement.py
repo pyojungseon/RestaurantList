@@ -22,19 +22,19 @@ class basement:
                                     "imageUrl": ""
                                 },
                                 "profile": {
-                                    "imageUrl": "#",
+                                    "imageUrl": "",
                                     "nickname": "bok프로필"
                                 },
                                 "buttons": [
                                     {
                                         "action": "block",
                                         "label": "추천",
-                                        "blockId": "62fb28a0fb4d7520b2bbd64b"
+                                        "blockId": "62fb272cf534cf44c78ed706"
                                     },
                                     {
                                         "label": "건의",
                                         "action": "block",
-                                        "blockId": "62fb2254f534cf44c78ed656"
+                                        "blockId": "62fb21bf70055f434dcd2943"
                                     }
                                 ]
                             }

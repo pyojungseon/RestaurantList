@@ -17,7 +17,21 @@ class basement:
                         {
                             "simpleText": {
                                 "text": '''BOK본관 부근 음식점 추천 챗봇입니다.
-                                \n기능 : 추천 / 평가 / 추가 / 수정 / 건의'''
+                                \n기능 : 추천 / 평가 / 추가 / 수정 / 건의''',
+                                "buttons": [
+                                    {
+                                        "label": "추천",
+                                        "action": "block",
+                                        "messageText": "추천",
+                                        "blockid": "62fb28a0fb4d7520b2bbd64b"
+                                    },
+                                    {
+                                        "label": "건의",
+                                        "action": "block",
+                                        "messageText": "건의",
+                                        "blockid": "62fb2254f534cf44c78ed656"
+                                    }
+                                ]
                             }
                         }
                     ]

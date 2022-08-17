@@ -41,7 +41,7 @@ def recommend():
 def restaurant():
     params = request.get_json()
     parser = requestParsing()
-    requestDto = parser.parsing(params)
+    requestDto = parser.parsing(params, "사용법")
 
     logData = logDTO(requestDto.userId, requestDto.content, requestDto.tag)
     dbCon.insertLogData(logData)

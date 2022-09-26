@@ -96,36 +96,56 @@ class recRestaurant:
                     "template": {
                         "outputs": [
                             {
-                                "basicCard": {
-                                    "title": "BOK 맛집추천",
-                                    "description": "금액대를 입력해주세요",
-                                    "thumbnail": {
-                                        "imageUrl": ""
-                                    },
-                                    "profile": {
-                                        "imageUrl": "",
-                                        "nickname": "bok프로필"
-                                    },
-                                    "buttons": [
+                                "carousel": {
+                                    "type": "basicCard",
+                                    "items": [
                                         {
-                                            "action": "message",
-                                            "label": "1만원",
-                                            "messageText": "1"
+                                            "title": "맛집추천",
+                                            "description": "금액대를 입력해주세요",
+                                            "thumbnail": {
+                                                "imageUrl": ""
+                                            },
+                                            "buttons": [
+                                                {
+                                                    "action": "message",
+                                                    "label": "1만원",
+                                                    "messageText": "1"
+                                                },
+                                                {
+                                                    "action": "message",
+                                                    "label": "2만원",
+                                                    "messageText": "2"
+                                                },
+                                                {
+                                                    "action": "message",
+                                                    "label": "3만원",
+                                                    "messageText": "3"
+                                                }
+                                            ]
                                         },
                                         {
-                                            "action": "message",
-                                            "label": "2만원",
-                                            "messageText": "2"
-                                        },
-                                        {
-                                            "action": "message",
-                                            "label": "3~6만원",
-                                            "messageText": "3"
-                                        },
-                                        {
-                                            "action": "message",
-                                            "label": "6만원 이상",
-                                            "messageText": "6"
+                                            "title": "맛집추천",
+                                            "description": "비싼걸로?",
+                                            "thumbnail": {
+                                                "imageUrl": ""
+                                            },
+                                            "buttons": [
+                                                {
+                                                    "action": "message",
+                                                    "label": "4~6만원",
+                                                    "messageText": "4"
+                                                },
+                                                {
+                                                    "action": "message",
+                                                    "label": "그 이상",
+                                                    "messageText": "5"
+                                                },
+                                                {
+                                                    "action": "message",
+                                                    "label": "랜덤",
+                                                    "messageText": "6"
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
@@ -154,46 +174,56 @@ class recRestaurant:
                     "template": {
                         "outputs": [
                             {
-                                "basicCard": {
-                                    "title": "BOK 맛집추천",
-                                    "description": "목적을 입력해주세요",
-                                    "thumbnail": {
-                                        "imageUrl": ""
-                                    },
-                                    "profile": {
-                                        "imageUrl": "",
-                                        "nickname": "bok프로필"
-                                    },
-                                    "buttons": [
+                                "carousel": {
+                                    "type": "basicCard",
+                                    "items": [
                                         {
-                                            "action": "message",
-                                            "label": "1.없음",
-                                            "messageText": "1"
+                                            "title": "맛집추천",
+                                            "description": "무슨 목적이실까요?",
+                                            "thumbnail": {
+                                                "imageUrl": ""
+                                            },
+                                            "buttons": [
+                                                {
+                                                    "action": "message",
+                                                    "label": "0.없음",
+                                                    "messageText": "0"
+                                                },
+                                                {
+                                                    "action": "message",
+                                                    "label": "1.목성",
+                                                    "messageText": "1"
+                                                },
+                                                {
+                                                    "action": "message",
+                                                    "label": "2.야식(PAYCO)",
+                                                    "messageText": "2"
+                                                }
+                                            ]
                                         },
                                         {
-                                            "action": "message",
-                                            "label": "2.팀장회식",
-                                            "messageText": "2"
-                                        },
-                                        {
-                                            "action": "message",
-                                            "label": "3.과차장회식",
-                                            "messageText": "3"
-                                        },
-                                        {
-                                            "action": "message",
-                                            "label": "4.조사역회식",
-                                            "messageText": "4"
-                                        },
-                                        {
-                                            "action": "message",
-                                            "label": "5.목성",
-                                            "messageText": "5"
-                                        },
-                                        {
-                                            "action": "message",
-                                            "label": "6.야식(PAYCO)",
-                                            "messageText": "6"
+                                            "title": "맛집추천",
+                                            "description": "회식용도?",
+                                            "thumbnail": {
+                                                "imageUrl": ""
+                                            },
+                                            "buttons": [
+                                                {
+                                                    "action": "message",
+                                                    "label": "3.팀장회식",
+                                                    "messageText": "3"
+                                                },
+                                                {
+                                                    "action": "message",
+                                                    "label": "4.과차장회식",
+                                                    "messageText": "4"
+                                                },
+                                                {
+                                                    "action": "message",
+                                                    "label": "5.조사역회식",
+                                                    "messageText": "5"
+                                                }
+                                            ]
                                         }
                                     ]
                                 }

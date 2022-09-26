@@ -68,27 +68,27 @@ class basement:
                                 },
                                 "buttons": [
                                     {
-                                        "action": "recommend",
+                                        "action": "message",
                                         "label": "추천",
                                         "messageText": "추천"
                                     },
                                     {
-                                        "action": "recommend",
+                                        "action": "message",
                                         "label": "평가",
                                         "messageText": "평가"
                                     },
                                     {
-                                        "action": "recommend",
+                                        "action": "message",
                                         "label": "추가",
                                         "messageText": "추가"
                                     },
                                     {
-                                        "action": "recommend",
+                                        "action": "message",
                                         "label": "수정",
                                         "messageText": "수정"
                                     },
                                     {
-                                        "action": "recommend",
+                                        "action": "message",
                                         "label": "삭제",
                                         "messageText": "삭제"
                                     },
@@ -145,27 +145,27 @@ class basement:
                                 },
                                 "buttons": [
                                     {
-                                        "action": "recommend",
+                                        "action": "message",
                                         "label": "추천",
                                         "messageText": "추천"
                                     },
                                     {
-                                        "action": "recommend",
+                                        "action": "message",
                                         "label": "평가",
                                         "messageText": "평가"
                                     },
                                     {
-                                        "action": "recommend",
+                                        "action": "message",
                                         "label": "추가",
                                         "messageText": "추가"
                                     },
                                     {
-                                        "action": "recommend",
+                                        "action": "message",
                                         "label": "수정",
                                         "messageText": "수정"
                                     },
                                     {
-                                        "action": "recommend",
+                                        "action": "message",
                                         "label": "삭제",
                                         "messageText": "삭제"
                                     },

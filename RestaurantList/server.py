@@ -25,7 +25,7 @@ def home():
 def restaurant():
     params = request.get_json()
     parser = requestParsing()
-    requestDto = parser.parsing(params, "사용법")
+    requestDto = parser.parsing(params)
 
     logData = logDTO(requestDto.userId, requestDto.content, requestDto.tag)
     dbCon.insertLogData(logData)

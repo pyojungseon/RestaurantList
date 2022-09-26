@@ -56,46 +56,56 @@ class basement:
                 "template": {
                     "outputs": [
                         {
-                            "basicCard": {
-                                "title": "BOK챗봇",
-                                "description": "원하시는 기능을 선택해주세요",
-                                "thumbnail": {
-                                    "imageUrl": ""
-                                },
-                                "profile": {
-                                    "imageUrl": "",
-                                    "nickname": "bok프로필"
-                                },
-                                "buttons": [
+                            "carousel": {
+                                "type": "basicCard",
+                                "items": [
                                     {
-                                        "action": "message",
-                                        "label": "추천",
-                                        "messageText": "추천"
+                                        "title": "맛집추천 챗봇입니다.",
+                                        "description": "무엇을 원하시나요?",
+                                        "thumbnail": {
+                                            "imageUrl": ""
+                                        },
+                                        "buttons": [
+                                            {
+                                                "action": "message",
+                                                "label": "추천",
+                                                "messageText": "추천"
+                                            },
+                                            {
+                                                "action": "message",
+                                                "label": "평가",
+                                                "messageText": "평가"
+                                            },
+                                            {
+                                                "action": "message",
+                                                "label": "건의",
+                                                "messageText": "건의"
+                                            }
+                                        ]
                                     },
                                     {
-                                        "action": "message",
-                                        "label": "평가",
-                                        "messageText": "평가"
-                                    },
-                                    {
-                                        "action": "message",
-                                        "label": "추가",
-                                        "messageText": "추가"
-                                    },
-                                    {
-                                        "action": "message",
-                                        "label": "수정",
-                                        "messageText": "수정"
-                                    },
-                                    {
-                                        "action": "message",
-                                        "label": "삭제",
-                                        "messageText": "삭제"
-                                    },
-                                    {
-                                        "action": "message",
-                                        "label": "건의",
-                                        "messageText": "건의"
+                                        "title": "맛집추천 챗봇입니다.",
+                                        "description": "나만아는 맛집? 등록해주세요! ^^",
+                                        "thumbnail": {
+                                            "imageUrl": ""
+                                        },
+                                        "buttons": [
+                                            {
+                                                "action": "message",
+                                                "label": "추가",
+                                                "messageText": "추가"
+                                            },
+                                            {
+                                                "action": "message",
+                                                "label": "수정",
+                                                "messageText": "수정"
+                                            },
+                                            {
+                                                "action": "message",
+                                                "label": "삭제",
+                                                "messageText": "삭제"
+                                            }
+                                        ]
                                     }
                                 ]
                             }

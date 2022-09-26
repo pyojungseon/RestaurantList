@@ -22,7 +22,7 @@ class recRestaurant:
                                     "type": "basicCard",
                                     "items": [
                                         {
-                                            "title": "맛집추천",
+                                            "title": "맛집추천 챗봇입니다",
                                             "description": "본관 주변 맛집을 찾아봅시다",
                                             "thumbnail": {
                                                 "imageUrl": ""
@@ -46,8 +46,8 @@ class recRestaurant:
                                             ]
                                         },
                                         {
-                                            "title": "맛집추천",
-                                            "description": "아이디어는 언제나 환영합니다",
+                                            "title": "개인서버로 서비스 되고있습니다",
+                                            "description": "개선 아이디어는 언제나 환영합니다",
                                             "thumbnail": {
                                                 "imageUrl": ""
                                             },
@@ -100,8 +100,8 @@ class recRestaurant:
                                     "type": "basicCard",
                                     "items": [
                                         {
-                                            "title": "맛집추천",
-                                            "description": "금액대를 입력해주세요",
+                                            "title": "금액대를 입력해주세요",
+                                            "description": "적당한 가격대?",
                                             "thumbnail": {
                                                 "imageUrl": ""
                                             },
@@ -124,8 +124,8 @@ class recRestaurant:
                                             ]
                                         },
                                         {
-                                            "title": "맛집추천",
-                                            "description": "비싼걸로?",
+                                            "title": "금액대를 입력해주세요",
+                                            "description": "아니면 비싼걸로?",
                                             "thumbnail": {
                                                 "imageUrl": ""
                                             },

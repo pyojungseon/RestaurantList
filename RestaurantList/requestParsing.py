@@ -7,7 +7,7 @@ from DTO.requestDTO import RequestDTO
 
 class requestParsing:
 
-    def parsing(self, params, header):
+    def parsing(self, params):
         print(params)
 
         userId = params['userRequest']['user']['id']
@@ -18,11 +18,11 @@ class requestParsing:
         contextSize = len(params['contexts'])
         tagPoint = 0
         lifeSpan = 0
-        tag = header
         if contextSize>0:
             for i in range(0,contextSize):
-                if int(params['contexts'][i]['lifespan'])<5 and params['contexts'][i]['name']==tag:
+                if int(params['contexts'][i]['lifespan'])<5:
                     lifeSpan = params['contexts'][i]['lifespan']
+                    tag = params['contexts'][i]['name']
                     tagPoint=i
                     break
 

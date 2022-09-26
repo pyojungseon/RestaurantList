@@ -79,7 +79,7 @@ class DBConnection:
         cur = self.conn.cursor()
         sql = 'select * from RestTBL where tag ="' + recData.tag + '" and (lprice='+recData.lprice+' ' \
               'or hprice='+recData.hprice+') and moksung='+recData.moksung+' and payco='+recData.payco+ ' ' \
-              'and mn5='+recData.mn5+'and mn4='+recData.mn4+'and mn2='+recData.mn2+';'
+              'and mn5="'+recData.mn5+'" and mn4="'+recData.mn4+'" and mn2"='+recData.mn2+'";'
         cur.execute(sql)
         mateData = []
         while (True):

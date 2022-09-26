@@ -18,8 +18,48 @@ class recRestaurant:
                     "template": {
                         "outputs": [
                             {
-                                "simpleText": {
-                                    "text": "1.한식 / 2.일식 / 3.중식 / 4.양식 / 5.아시안 / 6.랜덤 중 입력하세요(4 또는 양식)"
+                                "basicCard": {
+                                    "title": "BOK 맛집추천",
+                                    "description": "메뉴 종류를 입력해주세요",
+                                    "thumbnail": {
+                                        "imageUrl": ""
+                                    },
+                                    "profile": {
+                                        "imageUrl": "",
+                                        "nickname": "bok프로필"
+                                    },
+                                    "buttons": [
+                                        {
+                                            "action": "message",
+                                            "label": "1.한식",
+                                            "messageText": "한식"
+                                        },
+                                        {
+                                            "action": "message",
+                                            "label": "2.양식",
+                                            "messageText": "양식"
+                                        },
+                                        {
+                                            "action": "message",
+                                            "label": "3.일식",
+                                            "messageText": "일식"
+                                        },
+                                        {
+                                            "action": "message",
+                                            "label": "4.중식",
+                                            "messageText": "중식"
+                                        },
+                                        {
+                                            "action": "message",
+                                            "label": "5.아시안",
+                                            "messageText": "아시안"
+                                        },
+                                        {
+                                            "action": "message",
+                                            "label": "6.랜덤",
+                                            "messageText": "랜덤"
+                                        }
+                                    ]
                                 }
                             }
                         ]
@@ -45,8 +85,38 @@ class recRestaurant:
                     "template": {
                         "outputs": [
                             {
-                                "simpleText": {
-                                    "text": "금액대(만원)을 입력하세요(제한없음은 0, 최대값은 12)"
+                                "basicCard": {
+                                    "title": "BOK 맛집추천",
+                                    "description": "금액대를 입력해주세요",
+                                    "thumbnail": {
+                                        "imageUrl": ""
+                                    },
+                                    "profile": {
+                                        "imageUrl": "",
+                                        "nickname": "bok프로필"
+                                    },
+                                    "buttons": [
+                                        {
+                                            "action": "message",
+                                            "label": "1만원",
+                                            "messageText": "1"
+                                        },
+                                        {
+                                            "action": "message",
+                                            "label": "2만원",
+                                            "messageText": "2"
+                                        },
+                                        {
+                                            "action": "message",
+                                            "label": "3~6만원",
+                                            "messageText": "3"
+                                        },
+                                        {
+                                            "action": "message",
+                                            "label": "6만원 이상",
+                                            "messageText": "6"
+                                        }
+                                    ]
                                 }
                             }
                         ]
@@ -72,8 +142,48 @@ class recRestaurant:
                     "template": {
                         "outputs": [
                             {
-                                "simpleText": {
-                                    "text": "요청내용 : "+requestDto.param1+" , "+requestDto.param2+", "+requestDto.content+"\nDB 구성중. 구성되고 나면 추천레스토랑 보여줄 것"
+                                "basicCard": {
+                                    "title": "BOK 맛집추천",
+                                    "description": "목적을 입력해주세요",
+                                    "thumbnail": {
+                                        "imageUrl": ""
+                                    },
+                                    "profile": {
+                                        "imageUrl": "",
+                                        "nickname": "bok프로필"
+                                    },
+                                    "buttons": [
+                                        {
+                                            "action": "message",
+                                            "label": "1.없음",
+                                            "messageText": "1"
+                                        },
+                                        {
+                                            "action": "message",
+                                            "label": "2.팀장회식",
+                                            "messageText": "2"
+                                        },
+                                        {
+                                            "action": "message",
+                                            "label": "3.과차장회식",
+                                            "messageText": "3"
+                                        },
+                                        {
+                                            "action": "message",
+                                            "label": "4.조사역회식",
+                                            "messageText": "4"
+                                        },
+                                        {
+                                            "action": "message",
+                                            "label": "5.목성",
+                                            "messageText": "5"
+                                        },
+                                        {
+                                            "action": "message",
+                                            "label": "6.야식(PAYCO)",
+                                            "messageText": "6"
+                                        }
+                                    ]
                                 }
                             }
                         ]

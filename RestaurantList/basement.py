@@ -27,14 +27,34 @@ class basement:
                                 },
                                 "buttons": [
                                     {
-                                        "action": "block",
+                                        "action": "recommend",
                                         "label": "추천",
-                                        "blockId": "62fb272cf534cf44c78ed706"
+                                        "messageText": "추천"
                                     },
                                     {
+                                        "action": "recommend",
+                                        "label": "평가",
+                                        "messageText": "평가"
+                                    },
+                                    {
+                                        "action": "recommend",
+                                        "label": "추가",
+                                        "messageText": "추가"
+                                    },
+                                    {
+                                        "action": "recommend",
+                                        "label": "수정",
+                                        "messageText": "수정"
+                                    },
+                                    {
+                                        "action": "recommend",
+                                        "label": "삭제",
+                                        "messageText": "삭제"
+                                    },
+                                    {
+                                        "action": "message",
                                         "label": "건의",
-                                        "action": "block",
-                                        "blockId": "62fb21bf70055f434dcd2943"
+                                        "messageText": "건의"
                                     }
                                 ]
                             }
@@ -54,6 +74,12 @@ class basement:
                             "lifeSpan": 0
                         },{
                             "name": "평가",
+                            "lifeSpan": 0
+                        },{
+                            "name": "삭제",
+                            "lifeSpan": 0
+                        },{
+                            "name": "건의",
                             "lifeSpan": 0
                         }
                     ]
@@ -108,9 +134,72 @@ class basement:
                 "template": {
                     "outputs": [
                         {
-                            "simpleText": {
-                                "text": "입력값 오류! 사용법이 궁금하시면 사용법이라고 입력해주세요."
+                            "basicCard": {
+                                "title": "BOK챗봇",
+                                "description": "원하시는 기능을 선택해주세요",
+                                "thumbnail": {
+                                    "imageUrl": ""
+                                },
+                                "profile": {
+                                    "imageUrl": "",
+                                    "nickname": "bok프로필"
+                                },
+                                "buttons": [
+                                    {
+                                        "action": "recommend",
+                                        "label": "추천",
+                                        "messageText": "추천"
+                                    },
+                                    {
+                                        "action": "recommend",
+                                        "label": "평가",
+                                        "messageText": "평가"
+                                    },
+                                    {
+                                        "action": "recommend",
+                                        "label": "추가",
+                                        "messageText": "추가"
+                                    },
+                                    {
+                                        "action": "recommend",
+                                        "label": "수정",
+                                        "messageText": "수정"
+                                    },
+                                    {
+                                        "action": "recommend",
+                                        "label": "삭제",
+                                        "messageText": "삭제"
+                                    },
+                                    {
+                                        "action": "message",
+                                        "label": "건의",
+                                        "messageText": "건의"
+                                    }
+                                ]
                             }
+                        }
+                    ]
+                },
+                "context": {
+                    "values": [
+                        {
+                            "name": "추가",
+                            "lifeSpan": 0
+                        }, {
+                            "name": "추천",
+                            "lifeSpan": 0
+                        }, {
+                            "name": "수정",
+                            "lifeSpan": 0
+                        }, {
+                            "name": "평가",
+                            "lifeSpan": 0
+                        }, {
+                            "name": "삭제",
+                            "lifeSpan": 0
+                        }, {
+                            "name": "건의",
+                            "lifeSpan": 0
                         }
                     ]
                 }

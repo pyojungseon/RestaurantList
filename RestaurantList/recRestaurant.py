@@ -18,46 +18,56 @@ class recRestaurant:
                     "template": {
                         "outputs": [
                             {
-                                "basicCard": {
-                                    "title": "BOK 맛집추천",
-                                    "description": "메뉴 종류를 입력해주세요",
-                                    "thumbnail": {
-                                        "imageUrl": ""
-                                    },
-                                    "profile": {
-                                        "imageUrl": "",
-                                        "nickname": "bok프로필"
-                                    },
-                                    "buttons": [
+                                "carousel": {
+                                    "type": "basicCard",
+                                    "items": [
                                         {
-                                            "action": "message",
-                                            "label": "1.한식",
-                                            "messageText": "한식"
+                                            "title": "맛집추천",
+                                            "description": "본관 주변 맛집을 찾아봅시다",
+                                            "thumbnail": {
+                                                "imageUrl": ""
+                                            },
+                                            "buttons": [
+                                                {
+                                                    "action": "message",
+                                                    "label": "1.한식",
+                                                    "messageText": "한식"
+                                                },
+                                                {
+                                                    "action": "message",
+                                                    "label": "2.일식",
+                                                    "messageText": "일식"
+                                                },
+                                                {
+                                                    "action": "message",
+                                                    "label": "3.중식",
+                                                    "messageText": "중식"
+                                                }
+                                            ]
                                         },
                                         {
-                                            "action": "message",
-                                            "label": "2.양식",
-                                            "messageText": "양식"
-                                        },
-                                        {
-                                            "action": "message",
-                                            "label": "3.일식",
-                                            "messageText": "일식"
-                                        },
-                                        {
-                                            "action": "message",
-                                            "label": "4.중식",
-                                            "messageText": "중식"
-                                        },
-                                        {
-                                            "action": "message",
-                                            "label": "5.아시안",
-                                            "messageText": "아시안"
-                                        },
-                                        {
-                                            "action": "message",
-                                            "label": "6.랜덤",
-                                            "messageText": "랜덤"
+                                            "title": "맛집추천",
+                                            "description": "아이디어는 언제나 환영합니다",
+                                            "thumbnail": {
+                                                "imageUrl": ""
+                                            },
+                                            "buttons": [
+                                                {
+                                                    "action": "message",
+                                                    "label": "4.양식",
+                                                    "messageText": "양식"
+                                                },
+                                                {
+                                                    "action": "message",
+                                                    "label": "5.아시안",
+                                                    "messageText": "아시안"
+                                                },
+                                                {
+                                                    "action": "message",
+                                                    "label": "6.랜덤",
+                                                    "messageText": "랜덤"
+                                                }
+                                            ]
                                         }
                                     ]
                                 }

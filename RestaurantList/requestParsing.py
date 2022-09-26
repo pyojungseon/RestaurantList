@@ -18,6 +18,7 @@ class requestParsing:
         contextSize = len(params['contexts'])
         tagPoint = 0
         lifeSpan = 0
+        tag=""
         if contextSize>0:
             for i in range(0,contextSize):
                 if int(params['contexts'][i]['lifespan'])<5:

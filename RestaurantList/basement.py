@@ -8,7 +8,48 @@ class basement:
 
     def ment(self, requestDto):
 
-        if requestDto.header == "사용법":
+        if requestDto.content == "아이디":
+            print("if문 아이디 content in")
+            dataSend = {
+                "version": "2.0",
+                "template": {
+                    "outputs": [
+                        {
+                            "simpleText": {
+                                "text": "Hash : "+requestDto.userId
+                            }
+                        }
+                    ]
+                }
+            }
+        elif requestDto.content == "김소영":
+            print("if문김소영 content in")
+            dataSend = {
+                "version": "2.0",
+                "template": {
+                    "outputs": [
+                        {
+                            "simpleText": {
+                                "text": "알라뷰~~"
+                            }
+                        }
+                    ]
+                }
+            }
+        elif requestDto.content == "섹스":
+            dataSend = {
+                "version": "2.0",
+                "template": {
+                    "outputs": [
+                        {
+                            "simpleText": {
+                                "text": "이런짓은 하는 인간은 고현석뿐 닥쳐라!!"
+                            }
+                        }
+                    ]
+                }
+            }
+        elif requestDto.header == "사용법":
             print("사용법 content in")
             dataSend = {
                 "version": "2.0",
@@ -66,63 +107,21 @@ class basement:
                         {
                             "name": "추가",
                             "lifeSpan": 0
-                        },{
+                        }, {
                             "name": "추천",
                             "lifeSpan": 0
-                        },{
+                        }, {
                             "name": "수정",
                             "lifeSpan": 0
-                        },{
+                        }, {
                             "name": "평가",
                             "lifeSpan": 0
-                        },{
+                        }, {
                             "name": "삭제",
                             "lifeSpan": 0
-                        },{
+                        }, {
                             "name": "건의",
                             "lifeSpan": 0
-                        }
-                    ]
-                }
-            }
-
-        elif requestDto.header == "아이디":
-            print("if문 아이디 content in")
-            dataSend = {
-                "version": "2.0",
-                "template": {
-                    "outputs": [
-                        {
-                            "simpleText": {
-                                "text": "Hash : "+requestDto.userId
-                            }
-                        }
-                    ]
-                }
-            }
-        elif requestDto.header == "김소영":
-            print("if문김소영 content in")
-            dataSend = {
-                "version": "2.0",
-                "template": {
-                    "outputs": [
-                        {
-                            "simpleText": {
-                                "text": "알라뷰~~"
-                            }
-                        }
-                    ]
-                }
-            }
-        elif requestDto.header == "섹스":
-            dataSend = {
-                "version": "2.0",
-                "template": {
-                    "outputs": [
-                        {
-                            "simpleText": {
-                                "text": "이런짓은 하는 인간은 고현석뿐 닥쳐라!!"
-                            }
                         }
                     ]
                 }

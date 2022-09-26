@@ -64,5 +64,5 @@ class requestParsing:
         print("param1 : " + str(param1))
         print("param2 : " + str(param2))
         print("param3 : " + str(param3))
-        dto = RequestDTO(userId, content, header, tag, lifeSpan, param1, param2, param3, param4, param5)
+        dto = RequestDTO(userId, content, tag, tag, lifeSpan, param1, param2, param3, param4, param5)
         return dto

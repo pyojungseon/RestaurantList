@@ -70,9 +70,10 @@ class recRestaurant:
                                 "name": "추천",
                                 "lifeSpan": 4,
                                 "params": {
-                                    "param1": requestDto.param1,
+                                    "param1": requestDto.content,
                                     "param2": requestDto.param2,
-                                    "param3": requestDto.param3
+                                    "param3": requestDto.param3,
+                                    "param4": requestDto.param4
                                 }
                             }
                         ]
@@ -128,8 +129,9 @@ class recRestaurant:
                                 "lifeSpan": 3,
                                 "params": {
                                     "param1": requestDto.param1,
-                                    "param2": requestDto.param2,
-                                    "param3": requestDto.param3
+                                    "param2": requestDto.content,
+                                    "param3": requestDto.param3,
+                                    "param4": requestDto.param4
                                 }
                             }
                         ]
@@ -196,7 +198,8 @@ class recRestaurant:
                                 "params": {
                                     "param1": requestDto.param1,
                                     "param2": requestDto.param2,
-                                    "param3": requestDto.param3
+                                    "param3": requestDto.content,
+                                    "param4": requestDto.param4
                                 }
                             }
                         ]
@@ -210,7 +213,7 @@ class recRestaurant:
                         "outputs": [
                             {
                                 "simpleText": {
-                                    "text": "2요청내용 : "+requestDto.param1+" , "+requestDto.param2+", "+requestDto.content+"\nDB 구성중. 구성되고 나면 추천레스토랑 보여줄 것"
+                                    "text": "2요청내용 : "+requestDto.param1+" , "+requestDto.param2+", "+requestDto.param3+", "+requestDto.content+"\nDB 구성중. 구성되고 나면 추천레스토랑 보여줄 것"
                                 }
                             }
                         ]

@@ -49,9 +49,14 @@ class requestParsing:
                 param3 = params['contexts'][tagPoint]['params']['param3']['value']
             except Exception as ex:
                 param3 = ""
+        try:
+            param4 = params['action']['clientExtra']['param4']
+        except Exception as ex:
+            try:
+                param4 = params['contexts'][tagPoint]['params']['param4']['value']
+            except Exception as ex:
+                param4 = ""
 
-
-        param4=""
         param5=""
 
         if content=="사용법" or content=="추가" or content=="추천" or content=="수정" or content=="평가" or content=="건의":

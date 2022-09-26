@@ -3,6 +3,7 @@ import sys
 
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from DTO.requestDTO import RequestDTO
+from DTO.restaurantDTO import restaurantDTO
 from MariaDB.DBCon import DBConnection
 
 class recRestaurant:
@@ -247,13 +248,30 @@ class recRestaurant:
                 }
             elif requestDto.lifeSpan == 2:
                 print("추천 content in lifespan = "+str(requestDto.lifeSpan))
+                restDto = restaurantDTO()
+                restDto.tag=requestDto.param1
+                restDto.hprice=requestDto.param2
+                restDto.lprice = requestDto.param2
+                if requestDto.param3 == 2:
+                    restDto.moksung="Y"
+                elif requestDto.param3 == 3:
+                    restDto.payco="Y"
+                elif requestDto.param3 == 4:
+                    restDto.mn5="Y"
+                elif requestDto.param3 == 5:
+                    restDto.mn4="Y"
+                elif requestDto.param3 == 6:
+                    restDto.mn2="Y"
+
+                restList = dbCon.getRecRestaurants(restDto)
+
                 dataSend = {
                     "version": "2.0",
                     "template": {
                         "outputs": [
                             {
                                 "simpleText": {
-                                    "text": "2요청내용 : "+requestDto.param1+" , "+requestDto.param2+", "+requestDto.param3+", "+requestDto.content+"\nDB 구성중. 구성되고 나면 추천레스토랑 보여줄 것"
+                                    "text": "요청내용 : "+restList[0].name+" 종류 : "+restList[0].tag+"\nDB 구성중. 구성되고 나면 추천레스토랑 보여줄 것"
                                 }
                             }
                         ]

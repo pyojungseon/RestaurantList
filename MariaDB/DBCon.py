@@ -4,6 +4,7 @@ import configparser
 import os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from DTO.logDTO import logDTO
+from DTO.restaurantDTO import restaurantDTO
 
 class DBConnection:
 
@@ -73,3 +74,17 @@ class DBConnection:
             print("insertSugData error")
             print(ex)
         self.conn.commit()
+
+    def getRecRestaurants(self, recData):
+        cur = self.conn.cursor()
+        sql = 'select * from RestTBL where tag ="' + recData.tag + '" and (lprice='+recData.lprice+' ' \
+              'or hprice='+recData.hprice+') and moksung='+recData.moksung+' and payco='+recData.payco+ ' ' \
+              'and mn5='+recData.mn5+'and mn4='+recData.mn4+'and mn2='+recData.mn2+';'
+        cur.execute(sql)
+        mateData = []
+        while (True):
+            row = cur.fetchone()
+            if row == None:
+                break
+            mateData.append(row)
+        return mateData

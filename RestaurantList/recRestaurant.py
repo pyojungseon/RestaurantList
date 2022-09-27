@@ -249,18 +249,18 @@ class recRestaurant:
             elif requestDto.lifeSpan == 2:
                 print("추천 content in lifespan = "+str(requestDto.lifeSpan))
                 restDto = restaurantDTO()
-                restDto.tag=requestDto.param1
-                restDto.hprice=requestDto.param2
-                restDto.lprice = requestDto.param2
-                if requestDto.param3 == 2:
+                restDto.tag=requestDto.param2
+                restDto.hprice=requestDto.param3
+                restDto.lprice = requestDto.param3
+                if requestDto.param4 == 2:
                     restDto.moksung="Y"
-                elif requestDto.param3 == 3:
+                elif requestDto.param4 == 3:
                     restDto.payco="Y"
-                elif requestDto.param3 == 4:
+                elif requestDto.param4 == 4:
                     restDto.mn5="Y"
-                elif requestDto.param3 == 5:
+                elif requestDto.param4 == 5:
                     restDto.mn4="Y"
-                elif requestDto.param3 == 6:
+                elif requestDto.param4 == 6:
                     restDto.mn2="Y"
 
                 restList = dbCon.getRecRestaurants(restDto)
@@ -284,7 +284,8 @@ class recRestaurant:
                                 "params": {
                                     "param1": "",
                                     "param2": "",
-                                    "param3": ""
+                                    "param3": "",
+                                    "param4": ""
                                 }
                             }
                         ]

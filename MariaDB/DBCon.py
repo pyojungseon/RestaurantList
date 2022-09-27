@@ -77,9 +77,14 @@ class DBConnection:
 
     def getRecRestaurants(self, recData):
         cur = self.conn.cursor()
-        sql = 'select * from RestTBL where tag ="' + recData.tag + '" and (lprice='+recData.lprice+' ' \
-              'or hprice='+recData.hprice+') and moksung='+recData.moksung+' and payco='+recData.payco+ ' ' \
-              'and mn5="'+recData.mn5+'" and mn4="'+recData.mn4+'" and mn2"='+recData.mn2+'";'
+        sql = "select * from RestTBL" \
+                "where tag = '"+recData.tag+"'" \
+                "and (lprice="+recData.lprice+" or hprice="+recData.hprice+")" \
+                "and ('N'='"+recData.moksung+"' or moksung='"+recData.moksung+"')" \
+                "and ('N'='"+recData.payco+"' or payco='"+recData.payco+"')" \
+                "and ('N'='"+recData.mn5+"' or mn5='"+recData.mn5+"')" \
+                "and ('N'='"+recData.mn4+"' or mn4='"+recData.mn4+"')" \
+                "and ('N'='"+recData.mn2+"' or mn2='"+recData.mn2+"');"
         cur.execute(sql)
         mateData = []
         while (True):

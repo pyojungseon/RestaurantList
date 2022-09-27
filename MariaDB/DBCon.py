@@ -85,6 +85,7 @@ class DBConnection:
                 " and ('N'='"+recData.mn5+"' or mn5='"+recData.mn5+"')" \
                 " and ('N'='"+recData.mn4+"' or mn4='"+recData.mn4+"')" \
                 " and ('N'='"+recData.mn2+"' or mn2='"+recData.mn2+"');"
+        print(sql)
         cur.execute(sql)
         mateData = []
         while (True):

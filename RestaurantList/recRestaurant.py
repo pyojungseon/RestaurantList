@@ -298,7 +298,7 @@ class recRestaurant:
                             "outputs": [
                                 {
                                     "simpleText": {
-                                        "text": "요청내용 : "+restList[0].name+" 종류 : "+restList[0].tag+"\nDB 구성중. 구성되고 나면 추천레스토랑 보여줄 것"
+                                        "text": "요청내용 : "+restList[0][1]+" 종류 : "+restList[0][2]+"\nDB 구성중. 구성되고 나면 추천레스토랑 보여줄 것"
                                     }
                                 }
                             ]

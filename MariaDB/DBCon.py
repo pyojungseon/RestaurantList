@@ -77,7 +77,7 @@ class DBConnection:
 
     def getRecRestaurants(self, recData):
         cur = self.conn.cursor()
-        sql = "select * from RestTBL" \
+        sql = "select * from RestTBL " \
                 " where tag = '"+recData.tag+"'" \
                 " and (lprice="+recData.lprice+" or hprice="+recData.hprice+")" \
                 " and ('N'='"+recData.moksung+"' or moksung='"+recData.moksung+"')" \

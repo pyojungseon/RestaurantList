@@ -264,33 +264,60 @@ class recRestaurant:
                     restDto.mn2="Y"
 
                 restList = dbCon.getRecRestaurants(restDto)
-
-                dataSend = {
-                    "version": "2.0",
-                    "template": {
-                        "outputs": [
-                            {
-                                "simpleText": {
-                                    "text": "요청내용 : "+restList[0].name+" 종류 : "+restList[0].tag+"\nDB 구성중. 구성되고 나면 추천레스토랑 보여줄 것"
+                if len(restList)==0:
+                    dataSend = {
+                        "version": "2.0",
+                        "template": {
+                            "outputs": [
+                                {
+                                    "simpleText": {
+                                        "text": "아쉽게도 요청하신 내용의 식당이 없습니다 ㅠ.ㅠ 많은 등록 부탁드려요!"
+                                    }
                                 }
-                            }
-                        ]
-                    },
-                    "context": {
-                        "values": [
-                            {
-                                "name": "추천",
-                                "lifeSpan": 0,
-                                "params": {
-                                    "param1": "",
-                                    "param2": "",
-                                    "param3": "",
-                                    "param4": ""
+                            ]
+                        },
+                        "context": {
+                            "values": [
+                                {
+                                    "name": "추천",
+                                    "lifeSpan": 0,
+                                    "params": {
+                                        "param1": "",
+                                        "param2": "",
+                                        "param3": "",
+                                        "param4": ""
+                                    }
                                 }
-                            }
-                        ]
+                            ]
+                        }
                     }
-                }
+                else:
+                    dataSend = {
+                        "version": "2.0",
+                        "template": {
+                            "outputs": [
+                                {
+                                    "simpleText": {
+                                        "text": "요청내용 : "+restList[0].name+" 종류 : "+restList[0].tag+"\nDB 구성중. 구성되고 나면 추천레스토랑 보여줄 것"
+                                    }
+                                }
+                            ]
+                        },
+                        "context": {
+                            "values": [
+                                {
+                                    "name": "추천",
+                                    "lifeSpan": 0,
+                                    "params": {
+                                        "param1": "",
+                                        "param2": "",
+                                        "param3": "",
+                                        "param4": ""
+                                    }
+                                }
+                            ]
+                        }
+                    }
             else:
                 dataSend = {
                     "version": "2.0",

@@ -264,6 +264,7 @@ class recRestaurant:
                     restDto.mn2="Y"
 
                 restList = dbCon.getRecRestaurants(restDto)
+                print("갯수 : "+len(restList))
                 if len(restList)==0:
                     dataSend = {
                         "version": "2.0",
@@ -316,6 +317,7 @@ class recRestaurant:
                                 }
                             ]
                         })
+                    print(str(items))
 
                     dataSend = {
                         "version": "2.0",

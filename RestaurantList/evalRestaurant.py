@@ -95,30 +95,58 @@ class evalRestaurant:
                     }
             elif requestDto.lifeSpan == 4:
                 name = requestDto.content
-                dataSend = {
-                    "version": "2.0",
-                    "template": {
-                        "outputs": [
-                            {
-                                "simpleText": {
-                                    "text": "가계명 : "+name+" 의 평가 문구를 입력해주세요"
+                restaurnt = dbCon.getRestaurant(name)
+                if len(restaurnt) > 1:
+                    dataSend = {
+                        "version": "2.0",
+                        "template": {
+                            "outputs": [
+                                {
+                                    "simpleText": {
+                                        "text": "가계명 : "+name+" 의 평가 문구를 입력해주세요"
+                                    }
                                 }
-                            }
-                        ]
-                    },
-                    "context": {
-                        "values": [
-                            {
-                                "name": "평가",
-                                "lifeSpan": 3,
-                                "params": {
-                                    "param1": name,
-                                    "param2": ""
+                            ]
+                        },
+                        "context": {
+                            "values": [
+                                {
+                                    "name": "평가",
+                                    "lifeSpan": 3,
+                                    "params": {
+                                        "param1": name,
+                                        "param2": ""
+                                    }
                                 }
-                            }
-                        ]
+                            ]
+                        }
                     }
-                }
+                else:
+                    dataSend = {
+                        "version": "2.0",
+                        "template": {
+                            "outputs": [
+                                {
+                                    "simpleText": {
+                                        "text": "가계명 : " + name + "이 등록되어있지 않습니다. 평가할 가계명을 다시 입력해주세요"
+                                    }
+                                }
+                            ]
+                        },
+                        "context": {
+                            "values": [
+                                {
+                                    "name": "평가",
+                                    "lifeSpan": 4,
+                                    "params": {
+                                        "param1": "",
+                                        "param2": ""
+                                    }
+                                }
+                            ]
+                        }
+                    }
+
             elif requestDto.lifeSpan == 3:
                 name = requestDto.param1
                 content = requestDto.content

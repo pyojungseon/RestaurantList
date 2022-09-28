@@ -300,7 +300,7 @@ class recRestaurant:
                     rdnumber=[]
                     if len(restList)>3:
                         rnd_num=random.randint(1,length-1)
-                        for i in range(2):
+                        for i in range(3):
                             while rnd_num in rdnumber:
                                 rnd_num = random.randint(1,length-1)
                             rdnumber.append(rnd_num)
@@ -311,7 +311,7 @@ class recRestaurant:
                             rdnumber.append(i)
                     items=[]
                     for i in range(0, length):
-                        pointer=rdnumber[i]
+                        pointer=rdnumber[i]-1
                         print("items 추가 : "+str(i)+restList[pointer][1])
                         eval = ""
                         if (restList[pointer][11] is None) :

@@ -293,9 +293,9 @@ class recRestaurant:
                         }
                     }
                 else:
-                    length=len(restList)-1
+                    length=len(restList)
                     if len(restList)>3:
-                        length=2
+                        length=3
                     items=[]
                     for i in range(0, length):
                         print("items 추가 : "+i+restList[i][1])

@@ -300,10 +300,10 @@ class recRestaurant:
                     for i in range(0, length):
                         print("items 추가 : "+str(i)+restList[i][1])
                         items.append({
-                            "title": restList[i][2] + "추천",
-                            "description": restList[0][1],
+                            "title": restList[i][1],
+                            "description": restList[i][2] + "추천",
                             "thumbnail": {
-                                "imageUrl": ""
+                                "imageUrl": restList[i][5]
                             },
                             "buttons": [
                                 {

@@ -299,8 +299,7 @@ class recRestaurant:
                     length=len(restList)
                     rdnumber=[]
                     if len(restList)>3:
-                        rdnumber=random.randint(1,length-1)
-                        rnd_num=0
+                        rnd_num=random.randint(1,length-1)
                         for i in range(2):
                             while rnd_num in rdnumber:
                                 rnd_num = random.randint(1,length-1)

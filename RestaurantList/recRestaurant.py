@@ -303,13 +303,13 @@ class recRestaurant:
                             "title": restList[i][1],
                             "description": restList[i][2] + "추천",
                             "thumbnail": {
-                                "imageUrl": "https://search.naver.com/search.naver?where=image&sm=tab_jum&query="+restList[i][5]
+                                "imageUrl": "https://place.map.kakao.com/m/"+restList[i][5]+"#photoList?pidx=0"
                             },
                             "buttons": [
                                 {
                                     "action": "webLink",
                                     "label": "위치",
-                                    "webLinkUrl": restList[i][5]
+                                    "webLinkUrl": "https://place.map.kakao.com/"+restList[i][5]
                                 },
                                 {
                                     "action": "message",

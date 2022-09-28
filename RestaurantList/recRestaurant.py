@@ -296,32 +296,41 @@ class recRestaurant:
                 else:
                     thumbnail = getThumbnail()
                     length=len(restList)
+                    rdnumber=[]
                     if len(restList)>3:
+                        rdnumber=random.randint(0,length-1)
                         length=3
+                        while rnd_num in rdnumber:
+                            rnd_num = random.randint(1, 45)
+                        rdnumber.append(rnd_num)
+                    else:
+                        for i in range(0,length):
+                            rdnumber.append(i)
                     items=[]
                     for i in range(0, length):
-                        print("items 추가 : "+str(i)+restList[i][1])
+                        pointer=rnd_num[i]
+                        print("items 추가 : "+str(i)+restList[pointer][1])
                         eval = ""
-                        if (restList[i][11] is None) :
+                        if (restList[pointer][11] is None) :
                             eval = "아직 평가내용이 없습니다. 내용을 등록해주세요!"
                         else :
-                            eval = "평가 : "+restList[i][11]
+                            eval = "평가 : "+restList[pointer][11]
                         items.append({
-                            "title": restList[i][1],
+                            "title": restList[pointer][1],
                             "description": eval,
                             "thumbnail": {
-                                "imageUrl": thumbnail.getThumbnail(restList[i][1])
+                                "imageUrl": thumbnail.getThumbnail(restList[pointer][1])
                             },
                             "buttons": [
                                 {
                                     "action": "webLink",
                                     "label": "위치",
-                                    "webLinkUrl": restList[i][5]
+                                    "webLinkUrl": restList[pointer][5]
                                 },
                                 {
                                     "action": "message",
                                     "label": "평가하기",
-                                    "messageText": "평가 " + restList[i][1]
+                                    "messageText": "평가 " + restList[pointer][1]
                                 }
                             ]
                         })

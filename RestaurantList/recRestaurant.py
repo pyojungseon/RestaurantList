@@ -303,7 +303,7 @@ class recRestaurant:
                             "title": restList[i][1],
                             "description": restList[i][2] + "추천",
                             "thumbnail": {
-                                "imageUrl": restList[i][5]
+                                "imageUrl": "https://search.naver.com/search.naver?where=image&sm=tab_jum&query="+restList[i][5]
                             },
                             "buttons": [
                                 {

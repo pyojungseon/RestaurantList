@@ -303,7 +303,7 @@ class recRestaurant:
                         print("items 추가 : "+str(i)+restList[i][1])
                         eval = ""
                         if (restList[i][11] is None) :
-                            eval = "아직 평가내용이 없습니다."
+                            eval = "아직 평가내용이 없습니다. 내용을 등록해주세요!"
                         else :
                             eval = "평가 : "+restList[i][11]
                         items.append({

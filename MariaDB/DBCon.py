@@ -75,6 +75,14 @@ class DBConnection:
             print(ex)
         self.conn.commit()
 
+    def getRestaurant(self, name):
+        cur = self.conn.cursor()
+        sql = "select * from RestTBL where name='"+name+"';"
+        print(sql)
+        cur.execute(sql)
+        row = cur.fetchone()
+        return row
+
     def getRecRestaurants(self, recData):
         cur = self.conn.cursor()
         sql = "select * from RestTBL " \
@@ -94,3 +102,14 @@ class DBConnection:
                 break
             mateData.append(row)
         return mateData
+
+    def updateRestEval(self, name, content):
+        cur = self.conn.cursor()
+        try:
+            sql="update RestTBL set send='"+content+"', modDate=current_timestamp where name = '"+name+"'"
+            print(sql)
+            cur.execute(sql)
+        except Exception as ex:
+            print("RestTBL eval update error")
+            print(ex)
+        self.conn.commit()

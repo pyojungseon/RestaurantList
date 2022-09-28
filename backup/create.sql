@@ -31,7 +31,10 @@ payco nvarchar(1),
 mn5 nvarchar(1),
 mn4 nvarchar(1),
 mn2 nvarchar(1),
+eval nvarchar(2000),
 regDate timestamp,
 modDate timestamp,
 primary key(seq)
 );
+
+ALTER TABLE RestTBL ADD eval varchar(2000) AFTER mn2;

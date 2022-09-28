@@ -301,9 +301,12 @@ class recRestaurant:
                     items=[]
                     for i in range(0, length):
                         print("items 추가 : "+str(i)+restList[i][1])
+                        eval = "평가 : "+restList[i][8]
+                        if (len(eval)<1) :
+                            eval = "아직 평가내용이 없습니다."
                         items.append({
                             "title": restList[i][1],
-                            "description": restList[i][2] + "추천",
+                            "description": eval,
                             "thumbnail": {
                                 "imageUrl": thumbnail.getThumbnail(restList[i][1])
                             },
@@ -311,7 +314,7 @@ class recRestaurant:
                                 {
                                     "action": "webLink",
                                     "label": "위치",
-                                    "webLinkUrl": "https://m.place.naver.com/restaurant/"+restList[i][5]
+                                    "webLinkUrl": restList[i][5]
                                 },
                                 {
                                     "action": "message",

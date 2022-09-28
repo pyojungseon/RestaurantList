@@ -13,3 +13,4 @@ class restaurantDTO:
     mn5: str = "N"
     mn4: str = "N"
     mn2: str = "N"
+    eval: str = ""

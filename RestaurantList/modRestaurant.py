@@ -18,7 +18,7 @@ class modRestaurant:
                         "outputs": [
                             {
                                 "simpleText": {
-                                    "text": "수정을 원하는 음식점 명을 입력해주세요."
+                                    "text": "수정 기능 준비중입니다.."
                                 }
                             }
                         ]
@@ -27,7 +27,7 @@ class modRestaurant:
                         "values": [
                             {
                                 "name": "수정",
-                                "lifeSpan": 4
+                                "lifeSpan": 0
                             }
                         ]
                     }

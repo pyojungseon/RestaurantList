@@ -18,7 +18,7 @@ class addRestaurant:
                         "outputs": [
                             {
                                 "simpleText": {
-                                    "text": "1.음식점 이름을 입력해주세요(중복이름은 등록이 안되므로 필요시 지점명도 입력해주세요)"
+                                    "text": "추가 기능 준비중입니다."
                                 }
                             }
                         ]
@@ -27,7 +27,7 @@ class addRestaurant:
                         "values": [
                             {
                                 "name": "추가",
-                                "lifeSpan": 4
+                                "lifeSpan": 0
                             }
                         ]
                     }

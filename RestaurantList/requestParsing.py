@@ -14,6 +14,7 @@ class requestParsing:
         userId = userId.replace("\n", "")
         content = params['userRequest']['utterance']
         content = content.replace("\n", "")
+        header = content.split(" ")[0]
 
         contextSize = len(params['contexts'])
         tagPoint = 0
@@ -59,7 +60,7 @@ class requestParsing:
 
         param5=""
 
-        if content=="사용법" or content=="추가" or content=="추천" or content=="수정" or content=="평가" or content=="건의":
+        if header=="사용법" or header=="추가" or header=="추천" or header=="수정" or header=="평가" or header=="건의":
             tag = content
 
         print(content)

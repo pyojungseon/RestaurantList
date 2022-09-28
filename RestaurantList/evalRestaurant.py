@@ -14,8 +14,8 @@ class evalRestaurant:
             lifespan=4
             if requestDto.lifeSpan == 5 or requestDto.lifeSpan == 0:
                 name = requestDto.content.split(" ")[1]
-                restaurnt = dbCon.getRestaurant(name)
-                if len(restaurnt)==1:
+                if name != None:
+                    restaurnt = dbCon.getRestaurant(name)
                     dataSend = {
                         "version": "2.0",
                         "template": {

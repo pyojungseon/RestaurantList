@@ -298,6 +298,7 @@ class recRestaurant:
                         length=2
                     items=[]
                     for i in range(0, length):
+                        print("items 추가 : "+i+restList[i][1])
                         items.append({
                             "title": restList[i][0] + "추천",
                             "description": restList[0][1],

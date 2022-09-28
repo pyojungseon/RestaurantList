@@ -5,6 +5,7 @@ sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from DTO.requestDTO import RequestDTO
 from DTO.restaurantDTO import restaurantDTO
 from MariaDB.DBCon import DBConnection
+from getThumbnail import getThumbnail
 
 class recRestaurant:
 
@@ -293,6 +294,7 @@ class recRestaurant:
                         }
                     }
                 else:
+                    thumbnail = getThumbnail()
                     length=len(restList)
                     if len(restList)>3:
                         length=3
@@ -303,7 +305,7 @@ class recRestaurant:
                             "title": restList[i][1],
                             "description": restList[i][2] + "추천",
                             "thumbnail": {
-                                "imageUrl": "https://m.place.naver.com/restaurant/"+restList[i][5]+"/photo"
+                                "imageUrl": thumbnail.getThumbnail(restList[i][1])
                             },
                             "buttons": [
                                 {

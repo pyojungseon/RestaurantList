@@ -292,13 +292,39 @@ class recRestaurant:
                         }
                     }
                 else:
+                    length=len(restList)-1
+                    if len(restList)>3:
+                        length=2
+                    items=[]
+                    for i in range(0, length):
+                        items.append({
+                            "title": restList[i][0] + "추천",
+                            "description": restList[0][1],
+                            "thumbnail": {
+                                "imageUrl": ""
+                            },
+                            "buttons": [
+                                {
+                                    "action": "webLink",
+                                    "label": "위치",
+                                    "webLinkUrl": restList[i][5]
+                                },
+                                {
+                                    "action": "message",
+                                    "label": "평가하기",
+                                    "messageText": "평가 " + restList[i][1]
+                                }
+                            ]
+                        })
+
                     dataSend = {
                         "version": "2.0",
                         "template": {
                             "outputs": [
                                 {
-                                    "simpleText": {
-                                        "text": "요청내용 : "+restList[0][1]+" 종류 : "+restList[0][2]+"\nDB 구성중. 구성되고 나면 추천레스토랑 보여줄 것"
+                                    "carousel": {
+                                        "type": "basicCard",
+                                        "items": items
                                     }
                                 }
                             ]

@@ -106,7 +106,7 @@ class DBConnection:
     def updateRestEval(self, name, content):
         cur = self.conn.cursor()
         try:
-            sql="update RestTBL set send='"+content+"', modDate=current_timestamp where name = '"+name+"'"
+            sql="update RestTBL set eval='"+content+"', modDate=current_timestamp where name = '"+name+"'"
             print(sql)
             cur.execute(sql)
         except Exception as ex:

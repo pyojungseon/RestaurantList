@@ -61,7 +61,7 @@ class requestParsing:
         param5=""
 
         if header=="사용법" or header=="추가" or header=="추천" or header=="수정" or header=="평가" or header=="건의":
-            tag = content
+            tag = header
 
         print(content)
         print(userId)

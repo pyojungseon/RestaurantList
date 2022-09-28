@@ -302,7 +302,7 @@ class recRestaurant:
                     for i in range(0, length):
                         print("items 추가 : "+str(i)+restList[i][1])
                         eval = "평가 : "+restList[i][8]
-                        if (len(eval)<1) :
+                        if (len(eval)<=1) :
                             eval = "아직 평가내용이 없습니다."
                         items.append({
                             "title": restList[i][1],

@@ -304,6 +304,7 @@ class recRestaurant:
                             while rnd_num in rdnumber:
                                 rnd_num = random.randint(1,length-1)
                             rdnumber.append(rnd_num)
+                            print("random number : "+str(rnd_num))
                         length = 3
                     else:
                         for i in range(0,length):

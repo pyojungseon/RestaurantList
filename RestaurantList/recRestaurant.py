@@ -318,7 +318,7 @@ class recRestaurant:
                         if (restList[pointer][12] is None) :
                             eval = "아직 평가내용이 없습니다. 내용을 등록해주세요!"
                         else :
-                            eval = menu+"평가 : "+restList[pointer][11]
+                            eval = menu+"평가 : "+restList[pointer][12]
                         items.append({
                             "title": restList[pointer][1],
                             "description": eval,

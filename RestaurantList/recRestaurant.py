@@ -313,27 +313,18 @@ class recRestaurant:
                     for i in range(0, length):
                         pointer=rdnumber[i]-1
                         print("items 추가 : "+str(i)+restList[pointer][1])
-                        menu = restList[pointer][3]+""
+                        menu = restList[pointer][3]+"\n"
                         eval = ""
                         if (restList[pointer][12] is None) :
                             eval = "아직 평가내용이 없습니다. 내용을 등록해주세요!"
                         else :
-                            eval = restList[pointer][12]+""
+                            eval = menu+"평가 : "+restList[pointer][12]
                         items.append({
-                            "imageTitle": {
-                                "title" : restList[pointer][1],
+                            "title": restList[pointer][1],
+                            "description": eval,
+                            "thumbnail": {
                                 "imageUrl": thumbnail.getThumbnail(restList[pointer][1])
                             },
-                            "itemList":[{
-                                {
-                                    "title": "메뉴",
-                                    "description": menu
-                                },
-                                {
-                                    "title": "평가",
-                                    "description": eval
-                                },
-                            }],
                             "buttons": [
                                 {
                                     "action": "webLink",
@@ -355,7 +346,7 @@ class recRestaurant:
                             "outputs": [
                                 {
                                     "carousel": {
-                                        "type": "itemCard",
+                                        "type": "basicCard",
                                         "items": items
                                     }
                                 }

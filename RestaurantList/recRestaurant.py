@@ -313,11 +313,12 @@ class recRestaurant:
                     for i in range(0, length):
                         pointer=rdnumber[i]-1
                         print("items 추가 : "+str(i)+restList[pointer][1])
+                        menu = restList[pointer][3]+"\n"
                         eval = ""
-                        if (restList[pointer][11] is None) :
+                        if (restList[pointer][12] is None) :
                             eval = "아직 평가내용이 없습니다. 내용을 등록해주세요!"
                         else :
-                            eval = "평가 : "+restList[pointer][11]
+                            eval = menu+"평가 : "+restList[pointer][11]
                         items.append({
                             "title": restList[pointer][1],
                             "description": eval,

@@ -23,6 +23,7 @@ create table RestTBL
 seq int NOT NULL AUTO_INCREMENT,
 name nvarchar(1000) not null,
 tag nvarchar(10),
+menu nvarchar(200),
 lprice int,
 hprice int,
 map nvarchar(1000),
@@ -38,3 +39,4 @@ primary key(seq)
 );
 
 ALTER TABLE RestTBL ADD eval varchar(2000) AFTER mn2;
+ALTER TABLE RestTBL ADD menu varchar(200) AFTER tag;

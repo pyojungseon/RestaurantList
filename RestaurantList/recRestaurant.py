@@ -26,7 +26,7 @@ class recRestaurant:
                                     "items": [
                                         {
                                             "title": "맛집추천 챗봇입니다",
-                                            "description": "본관 주변 맛집을 찾아봅시다",
+                                            "description": "대구경북본부 시범운영중!",
                                             "thumbnail": {
                                                 "imageUrl": ""
                                             },
@@ -49,7 +49,7 @@ class recRestaurant:
                                             ]
                                         },
                                         {
-                                            "title": "개인서버로 서비스 되고있습니다",
+                                            "title": "개인서버로 서비스 되고있어 느릴 수 있습니다.",
                                             "description": "개선 아이디어는 언제나 환영합니다",
                                             "thumbnail": {
                                                 "imageUrl": ""

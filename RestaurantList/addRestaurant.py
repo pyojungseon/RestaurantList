@@ -73,7 +73,7 @@ class addRestaurant:
                             "values": [
                                 {
                                     "name": "추가",
-                                    "lifeSpan": 2,
+                                    "lifeSpan": 1,
                                     "params": {
                                         "param1": requestDto.param1,
                                         "param2": requestDto.content
@@ -114,7 +114,7 @@ class addRestaurant:
                             "outputs": [
                                 {
                                     "simpleText": {
-                                        "text": "4.최대금액대(만원)를 입력해주세요"
+                                        "text": "4.목적성이 있나요? 숫자로 입력해주세요. "
                                     }
                                 }
                             ]
@@ -123,7 +123,7 @@ class addRestaurant:
                             "values": [
                                 {
                                     "name": "추가",
-                                    "lifeSpan": 2,
+                                    "lifeSpan": 1,
                                     "params": {
                                         "param1": requestDto.param1,
                                         "param2": requestDto.param2,
@@ -158,7 +158,7 @@ class addRestaurant:
                             ]
                         }
                     }
-            elif requestDto.lifeSpan == 2:
+            elif requestDto.lifeSpan == 1:
                 if int(requestDto.content) > 0 or int(requestDto.content) < 21:
                     dataSend = {
                         "version": "2.0",
@@ -166,7 +166,7 @@ class addRestaurant:
                             "outputs": [
                                 {
                                     "simpleText": {
-                                        "text": "요청내용 : "+requestDto.param1+" , "+requestDto.param2+", "+requestDto.content+"\nDB 구성중. 구성되고 나면 레스토랑 추가 기능 수행"
+                                        "text": "요청내용 : "+requestDto.param1+" , "+requestDto.param2+", "+requestDto.content+"\n 입력하신 자료는 검토 후 등록될 예정입니다. 자료 감사합니다."
                                     }
                                 }
                             ]

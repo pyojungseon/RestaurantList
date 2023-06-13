@@ -329,7 +329,7 @@ class recRestaurant:
                                 {
                                     "action": "webLink",
                                     "label": "위치",
-                                    "webLinkUrl": restList[pointer][5]
+                                    "webLinkUrl": restList[pointer][6]
                                 },
                                 {
                                     "action": "message",
